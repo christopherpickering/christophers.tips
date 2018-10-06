@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Christophers Tips</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="About me and a few reminders">
+        <meta name="author" content="Christopher Pickering">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../static/img/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">    
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/search.css"><link rel="stylesheet" href="../static/css/website.css"><link rel="stylesheet" href="../static/css/website1.css"><link rel="stylesheet" href="../static/css/my.css"><link rel="stylesheet" href="../static/css/style.css">
+        
+    </head>
+    <body>
+        
+    <div class="book">
+        <div class="book-summary">
+            
+                
+                
+                    <nav role="navigation">
+                        hi
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GITBOOK_LINK
+        </a>
+    </li>
+</ul>
+                    </nav>
+                
+            
+        </div>
+        <div class="book-body">
+            
+                <div class="body-inner">
+                    
+                        
+
+<div class="book-header" role="navigation">
+    
+
+    <div class="pull-right my-site-name" >Christophers Tips<!--Christophers.Tips--></div>
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="/" >Christophers Tips</a>
+    </h1>
+	
+	
+
+</div>
+
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                
+                                    <section class="normal markdown-section">
+                                        
+                                            <h1>How to setup an Ubuntu Server</h1>
+<h2>Running Django; MySQL; Nginx; Gunicorn</h2>
+<p>If you will be running this as a virtual test server you can install ubuntu in a virtual box. </p>
+<p>Install virtualbox from https://www.virtualbox.org​</p>
+<p>Download Ubuntu server ISO. https://www.ubuntu.com/download/server </p>
+<p>Create a new virtual machine in virtualbox. On the initial startup select the ubuntu ISO.</p>
+<p>Don't forget to save the username and password for your nex machine, they come in handy. If you forget the pass you can <a href="https://askubuntu.com/questions/24006/how-do-i-reset-a-lost-administrative-password">reset it</a>.</p>
+<p>Make sure the network connection to the new machine is bridged. Restart the VM. </p>
+<p><code>sh
+$ sudo reboot</code></p>
+<h2>Create User and Working Directory</h2>
+<h3>Create Development User</h3>
+<p>You may want to create another generic user acount for anyone doing code work to use.</p>
+<p>```sh
+sudo adduser <new username></p>
+<h1>enter pass and other info</h1>
+<h1>add to sudo group</h1>
+<p>sudo usermod -aG sudo <new username></p>
+<h1>if you want to switch to the new user</h1>
+<p>su - <new username>
+```</p>
+<h3>Create the development directory</h3>
+<p><code>sh
+mkdir websites
+cd websites
+mkdir testsite</code></p>
+<h3>Pull Your Code From GIT Repository</h3>
+<p>Update Git settings and initialize a git repository for your project.</p>
+<p><code>sh
+git config --global user.name "user name"
+git config --global user.email "email address"
+cd testsite
+git init
+git remote add origin https://github.com/christopherpickering/django-test.git
+git pull</code></p>
+<p>Settings.py file is not a part of the repository. You can make the file and copy in from your host machine. If it is a local virtual machine it can help to set the allowed hosts to '*' if you have dynamic hosts.</p>
+<p><code>sh
+sudo scp 'username'@'machost':~/Documents/Projects/django-project/testsite/testsite/settings.py /home/websites/testsite/testsite/settings.py</code></p>
+<h2>Install PIP and Virtualenv Tools</h2>
+<p>We will be doing all work with a virtual environment. First we need to add the repositorys for pip, install pip, install venv, create a venv, and then install any packages we need.</p>
+<p>```sh
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+​
+sudo apt-get install python3-pip</p>
+<h1>create pip alias for pip3 to save time typing pip3..</h1>
+<p>sudo pip3 install virtualenv</p>
+<p>sudo virtualenv venv
+source venv/bin/activate</p>
+<h1>install any needed packages</h1>
+<p>sudo pip install <packages></p>
+<h1>check that you have ownership of the venv</h1>
+<p>ls -l</p>
+<h1>if something got messed up with permissions and you don't own the venv, you can take ownership like this</h1>
+<p>sudo chown -R youruser:youruser venv
+```</p>
+<p>If you created a requirements.txt file in the development mac, you can use it here to install all the needed packages. Activate the virual env and then run this.</p>
+<p><code>sh
+pip install -r requirements.txt</code></p>
+<p>If pyodbc is needed try this.</p>
+<p>```sh
+sudo apt-get install unixodbc-dev</p>
+<p>source venv/bin/activate
+pip install pyodbc
+```</p>
+<h2>Install and Setup MySQL</h2>
+<h3>Install Python Package and Ubuntu Packages</h3>
+<p>```sh</p>
+<h1>for python</h1>
+<p>source venv/bin/activate
+pip install mysqlclient
+deactivate</p>
+<h1>for ubuntu</h1>
+<p>sudo apt update
+sudo apt install mysql-server
+sudo apt install libmysqlclient-dev -y
+sudo apt install python-mysqldb
+```</p>
+<h3>Setup MySQL</h3>
+<p><a href="https://dev.mysql.com/doc/mysql-getting-started/en/">MySQL Docs</a></p>
+<p>Turn on MySQL and change settings so that is will auto start on reboot.</p>
+<p>```sh
+systemctl start mysql
+systemctl enable mysql</p>
+<h1>optional, for extra password security you can run this.</h1>
+<p>sudo mysql_secure_installation
+```</p>
+<p>Set a password for root sql user.</p>
+<p>```sh
+sudo mysql</p>
+<h1>set a root password.. where password is your pass</h1>
+<p>ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+flush privileges
+exit</p>
+<h1>try to login with new pass to verify.</h1>
+<p>mysql -u root -p
+```</p>
+<p>Finally, create the database you referenced in django's settings.py. </p>
+<p><code>sql
+ CREATE DATABASE my_database;</code></p>
+<h2>Build database tables</h2>
+<p>Next we can create the database tables needed for your django project.</p>
+<p><code>sh
+source venv/bin/activate
+python manage.py makemigrations
+python manage.py migrate
+deactivate</code></p>
+<h2>Setup ufw, Gunicorn, and NGINX</h2>
+<h3>Setup ufw</h3>
+<p><a href="https://help.ubuntu.com/community/UFW">ufw Docs</a></p>
+<p>First install the package</p>
+<p><code>sh
+$ sudo apt-get install ufw</code></p>
+<p>Setup correct port blocking.</p>
+<p>```sh
+sudo ufw default deny</p>
+<h1>if you access the server through ssh, you might want to enable that traffic ;)</h1>
+<p>sudo ufw allow ssh</p>
+<h1>if you need remote access to your sql database</h1>
+<p>sudo ufw allo MySQL
+sudo ufw enable
+sudo ufw allow 8800
+```</p>
+<h3>Setup Gunicorn</h3>
+<p><a href="http://docs.gunicorn.org/en/stable/settings.html">Gunicorn Docs</a></p>
+<p>Gunicorn is a python package and installed through the pip virtual environment.</p>
+<p><code>sh
+source venv/bin/activate
+pip install gunicorn
+deactivate</code></p>
+<p>Create gunicorn service information.</p>
+<p><code>sh
+sudo nano /etc/systemd/system/gunicorn.service</code></p>
+<p>Type in the following.</p>
+<p>```sh
+[Unit]
+Description=gunicorn service
+After=network.target</p>
+<p>[Service]
+User=username
+Group=www-data
+WorkingDirectory=/home/path/to/project/
+ExecStart=/home/path/to/project/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/path/to/project/project.sock PROJECT.wsgi:application</p>
+<p>[Install]
+WantedBy=multi-user.target
+```</p>
+<p>Turn on Gunicorn service.</p>
+<p>```sh
+sudo systemctl enable gunicorn.service
+sudo systemctl start gunicorn.service
+sudo systemctl status gunicorn.service
+​</p>
+<h1>check any errors with</h1>
+<p>journalctl -u gunicorn
+```</p>
+<h2>Setup NGINX</h2>
+<p><a href="http://nginx.org/en/docs/">NGINX Docs</a></p>
+<p>Install NGINX
+<code>sh
+$ sudo apt-get install nginx ufw</code></p>
+<p>First create a config file telling NGINX what sites are available. Run this, where prjoect is your project name. </p>
+<p>```sh
+sudo nano /etc/nginx/sites-available/project</p>
+<h1>add this to the file</h1>
+<h1>1. port number</h1>
+<h1>2. server ip or dns</h1>
+<h1>3. turn off error logging for favicon</h1>
+<h1>4. static location</h1>
+<h1>this is setup so any path beginning with static will go here.</h1>
+<h1>turn on autoindex if you want uses to be able to browse paths.</h1>
+<h1>5. all other locations. path to sock must match Gunicorn's path. file is auto created.</h1>
+<p>server {
+    listen 80;
+    server_name ipaddress webaddresses;
+    location = /favicon.icon {access_log off; log_not_found off;}</p>
+<pre class="codehilite"><code>root /home/path/to/project/project;
+
+location ~ ^/static/(.*)$ {
+    autoindex off;
+}
+
+location / {
+    include proxy_params;
+    proxy_pass http://unix:/home/path/to/project/project.sock;
+}</code></pre>
+
+
+<p>}
+```</p>
+<p>Enable site with NGINX and text it.</p>
+<p>```sh</p>
+<h1>enable site</h1>
+<p>sudo ln -s /etc/nginx/sites-available/project /etc/nginx/sites-enabled</p>
+<h1>test configuration</h1>
+<p>sudo nginx -t</p>
+<h1>finally, restart nginx</h1>
+<p>sudo systemctl restart nginx</p>
+<h1>check nginx status</h1>
+<p>systemctl status nginx.service
+```</p>
+<p>Allow NGINX to come througth the firewall.</p>
+<p><code>sh
+sudo ufw delete allow 8800
+sudo ufw allow 'Nginx Full'</code></p>
+<p>Run 'sudo ifconfig' to get the ip address of the server. You can now navigate to that in a browser and should find your django application running.</p>
+<h2>a few trouble shooting tips</h2>
+<p>```sh</p>
+<h1>Check that your site is in the sites avialable list</h1>
+<p>sudo ls /etc/nginx/sites-available</p>
+<h1>Check that your site is in the sites enabled list</h1>
+<p>sudo ls /etc/nginx/sites-enabled</p>
+<h1>still not working? check the server name. try copying from the default.</h1>
+<h1>check the nginx error log?</h1>
+<p>sudo tail -30 /var/log/nginx/error.log
+```</p>
+<p>After making changes be sure and get stuff reloaded.</p>
+<p>```sh
+sudo systemctl daemon-reload
+sudo systemctl start gunicorn
+sudo systemctl enable gunicorn
+sudo systemctl restart nginx</p>
+<h1>or</h1>
+<h1>for static file changes</h1>
+<p>sudo service nginx reload # or restart</p>
+<h1>for dynamic file changes</h1>
+<p>sudo service gunicorn reload # or restart
+```</p>
+                                        
+                                    </section>
+                                
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+                
+                    
+                
+        
+    
+</div>
+
+</div>
+
+        <script src="../static/js/search-engine.js"></script><script src="../static/js/fontsettings.js"></script><script src="../static/js/theme.js"></script><script src="../static/js/search-lunr.js"></script><script src="../static/js/gitbook.js"></script><script src="../static/js/search.js"></script><script src="../static/js/lunr.min.js"></script>
+        
+    </body>
+</html>
+

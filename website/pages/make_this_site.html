@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Christophers Tips</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="About me and a few reminders">
+        <meta name="author" content="Christopher Pickering">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../static/img/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">    
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/search.css"><link rel="stylesheet" href="../static/css/website.css"><link rel="stylesheet" href="../static/css/website1.css"><link rel="stylesheet" href="../static/css/my.css"><link rel="stylesheet" href="../static/css/style.css">
+        
+    </head>
+    <body>
+        
+    <div class="book">
+        <div class="book-summary">
+            
+                
+                
+                    <nav role="navigation">
+                        hi
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GITBOOK_LINK
+        </a>
+    </li>
+</ul>
+                    </nav>
+                
+            
+        </div>
+        <div class="book-body">
+            
+                <div class="body-inner">
+                    
+                        
+
+<div class="book-header" role="navigation">
+    
+
+    <div class="pull-right my-site-name" >Christophers Tips<!--Christophers.Tips--></div>
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="/" >Christophers Tips</a>
+    </h1>
+	
+	
+
+</div>
+
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                
+                                    <section class="normal markdown-section">
+                                        
+                                            <h1>How To Make This Site</h1>
+<p>This site can be made in a few simple steps -
+<em> Install and create a Gitbook
+</em> Customize Gitbook with a theme
+<em> Push Gitbook to Github repo
+</em> Register a domain with Google
+* Add CNAME records</p>
+<h2>Install and Create a Gitbook</h2>
+<p>If you do not have npm installed you will need to do that first.</p>
+<p><code>sh
+brew intall npm
+npm install -g gitbook-cli
+gitbook update</code></p>
+<p>Next create two directories, one for the Gitbook MD files and the other for the static site that will be generated. Gitbook will generate the static site inside the MD file but we'll need to move it to the other direcory when pushing to Github.</p>
+<p><code>sh
+mkdir documentation
+cd documentation
+mkdir site
+mkdir gitbook</code></p>
+<p>Next both directories need to have a git repo intialized. Go to Github.com and make a repo for you MD files with any name you like. Make another repo named myusername.gitbook.io.</p>
+<p>```sh
+cd gitbook
+git init
+touch .gitignore</p>
+<h1>you need to add _book to the .gitignore so you do not duplate on github</h1>
+<p>nano .gitignore
+_book</p>
+<h1>control + x then y to save</h1>
+<p>git remote add origin https//github.com/myusername/myrepo.git</p>
+<p>cd ../site
+git init
+git clone https://github.com/christopherpickering/christopherpickering.github.io.git
+mv christopherpickering.github.io/* .
+rm -Rf christopherpickering.github.io
+git remote add origin https://github.com/myusername/myusername.gitbook.io.git
+```</p>
+<p>Next create the gitbook.</p>
+<p><code>sh
+gitbook init</code></p>
+<p><a href="https://toolchain.gitbook.com">Gitbook Documentation</a> is available.</p>
+<h2>Create a Gitbook Theme</h2>
+<p>By default any theming we do will extend the default. Create the following structure for themes.</p>
+<p>```sh
+cd gitbook
+mkdir _layouts
+cd _layouts
+mkdir websites
+cd websites</p>
+<h1>any page tweaks will be here</h1>
+<p>touch page.html</p>
+<h1>any page header tweaks will be here</h1>
+<p>touch header.html
+```
+Copy any theme sections you need to change from the <a href="https://github.com/GitbookIO/theme-default/tree/master/_layouts">default theme</a>.
+<a href="https://github.com/GitbookIO/theme-api">example theme 1</a>
+<a href="https://github.com/GitbookIO/theme-official">example theme 3</a></p>
+<h2>Push Gitbook to Github Repo</h2>
+<p>A few bash scripts are created to make doing updates simple.</p>
+<ul>
+<li>build.bash -this script will only build the static site locally. </li>
+<li>push.bash -this script will push any changes in both repos to Github.</li>
+<li>build_and_push.bash -this script bill build the site and push udpates to Github.</li>
+</ul>
+<p>You will most likely need to give yourself permission to run the scripts.</p>
+<p>```sh
+sudo chmod 700 build.bash
+sudo chmod 700 push.bash
+sudo chmod 700 build_and_push.bash
+sudo chmod 700 pull.bash</p>
+<p>./build_and_push.bash
+```</p>
+<h2>Register a Domain With Google</h2>
+<p>Navigate to <a href="domains.google.com">domains.google.com</a> and register a domain. Got to the DNS tab and add in the CNAME information.</p>
+<p><img alt="CNAME" src="/img/make_this_site-CNAME.png" /></p>
+<h2>Add CNAME Records to your project</h2>
+<p><code>sh
+cd ../site
+touch CNAME
+nano CNAME</code></p>
+<p>Add two lines to the CNAME file</p>
+<p><code>mysite.com
+www.mysite.com</code></p>
+<p>Finally, build and push the site.</p>
+<p>```sh</p>
+<h1>to build and push to github</h1>
+<p>./build_and_push.bash 'optonal commit message'</p>
+<h1>to just build for testing</h1>
+<p>./build.bash</p>
+<h1>to pull latest updates from github</h1>
+<p>./pull.bash</p>
+<h1>to push latest updates to github</h1>
+<p>./push.bash 'optional commit message'
+```</p>
+<p>Nice! You will be able to see you site now at mysite.com!</p>
+                                        
+                                    </section>
+                                
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+                
+                    
+                
+        
+    
+</div>
+
+</div>
+
+        <script src="../static/js/search-engine.js"></script><script src="../static/js/fontsettings.js"></script><script src="../static/js/theme.js"></script><script src="../static/js/search-lunr.js"></script><script src="../static/js/gitbook.js"></script><script src="../static/js/search.js"></script><script src="../static/js/lunr.min.js"></script>
+        
+    </body>
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Christophers Tips</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="About me and a few reminders">
+        <meta name="author" content="Christopher Pickering">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../static/img/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">    
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/search.css"><link rel="stylesheet" href="../static/css/website.css"><link rel="stylesheet" href="../static/css/website1.css"><link rel="stylesheet" href="../static/css/my.css"><link rel="stylesheet" href="../static/css/style.css">
+        
+    </head>
+    <body>
+        
+    <div class="book">
+        <div class="book-summary">
+            
+                
+                
+                    <nav role="navigation">
+                        hi
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GITBOOK_LINK
+        </a>
+    </li>
+</ul>
+                    </nav>
+                
+            
+        </div>
+        <div class="book-body">
+            
+                <div class="body-inner">
+                    
+                        
+
+<div class="book-header" role="navigation">
+    
+
+    <div class="pull-right my-site-name" >Christophers Tips<!--Christophers.Tips--></div>
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="/" >Christophers Tips</a>
+    </h1>
+	
+	
+
+</div>
+
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                
+                                    <section class="normal markdown-section">
+                                        
+                                            <h1>Setting Up Cx_Oracle on Linux/Ubuntu</h1>
+<p><a href="https://cx-oracle.readthedocs.io/en/latest/installation.html">Cx_Oracle Docs</a></p>
+<h2>Download Instant Client</h2>
+<p>On host computer (Mac in this case) [donwload] the instant client basic and skd rpn's. Oracle changed the name on sdk's to devel.</p>
+<p>oracle-instantclient18.3-basic-18.3.0.0.0-1.x86_64.rpm
+oracle-instantclient18.3-devel-18.3.0.0.0-1.x86_64.rpm </p>
+<p>Put the files in a known directory. In my case I put the files in ~/Documents/Projects/Oracle</p>
+<h2>Move Instant Client files to Server</h2>
+<p>Login to the server. Run this command to copy the full Oracle directory with both rpn's from the Mac host to the server.
+On the Mac host don't forget to allow ssh connections. "System Preferences" &gt; "Sharing" &gt; "Remote Login" &gt; "On"</p>
+<p><code>sh
+sudo mkdir /home/Oracle
+sudo scp -r 'username'@'machost':~/Documents/Projects/Oracle /home/</code></p>
+<h2>Install Instant Client</h2>
+<p>Use alian to convert both rpn's to deb and install.</p>
+<p>```sh
+cd /home/Oracle
+sudo apt-get install alien
+sudo alien -i oracle-instantclient18.3-basic-18.3.0.0.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient18.3-devel-18.3.0.0.0-1.x86_64.rpm </p>
+<h1>uninstall alien if no longer needed</h1>
+<p>sudo apt-get purge --auto-remove alien
+sudo rm -rf /home/Oracle
+```</p>
+<p>Install the packages needed on Ubuntu</p>
+<p><code>sh
+sudo apt-get install libaio-dev</code></p>
+<h2>Change Oracle Settings</h2>
+<p>Add oracle to the system path. </p>
+<p><code>sh
+sudo sh -c "echo /usr/lib/oracle/18.3/client64/lib &gt; /etc/ld.so.conf.d/oracle-instantclient.conf"
+sudo ldconfig</code></p>
+<p>If you plan to use tnsnames.ora you can create the directory here. This is the default location for oracle.</p>
+<p>```sh
+sudo mkdir -p /usr/lib/oracle/18.3/client64/lib/network/admin</p>
+<h1>copy tnsnames.ora from Mac host</h1>
+<p>sudo scp 'username'@'machost':/opt/oracle/instantclient_12_2/network/admin/tnsnames.ora /usr/lib/oracle/18.3/client64/lib/network/admin</p>
+<p>```</p>
+<p>Good luck :)</p>
+                                        
+                                    </section>
+                                
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+                
+                    
+                
+        
+    
+</div>
+
+</div>
+
+        <script src="../static/js/search-engine.js"></script><script src="../static/js/fontsettings.js"></script><script src="../static/js/theme.js"></script><script src="../static/js/search-lunr.js"></script><script src="../static/js/gitbook.js"></script><script src="../static/js/search.js"></script><script src="../static/js/lunr.min.js"></script>
+        
+    </body>
+</html>
+

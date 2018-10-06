@@ -1,0 +1,61 @@
+{% extends "./layout.html" %}
+{% block title %}{{ title }} · {{ super() }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block head %}
+    {{ super() }}
+    {% if next and path %}
+        <link rel="next" href="{{ path }}" />
+    {% endif %}
+    {% if previous and path %}
+        <link rel="prev" href="{{ path }}" />
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="book">
+        <div class="book-summary">
+            {% block book_sidebar %}
+                {% block search_input %}{% endblock %}
+                {% block book_summary %}
+                    <nav role="navigation">
+                        {% include "summary.html" %}
+                    </nav>
+                {% endblock %}
+            {% endblock %}
+        </div>
+        <div class="book-body">
+            {% block book_body %}
+                <div class="body-inner">
+                    {% block book_inner %}
+                        {% include "header.html" %}
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                {% block search_results %}
+                                    <section class="normal markdown-section">
+                                        {% block page %}
+                                            {{ content }}
+                                        {% endblock %}
+                                    </section>
+                                {% endblock %}
+                            </div>
+                        </div>
+                        
+                    {% endblock %}
+                </div>
+                {% block book_navigation %}
+                    {% if previous and path %}
+                        <a href="{{ path }}{{ anchor }}" class="navigation navigation-prev {% if not (next and path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ title }}">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                {% endif %}
+                {% if next and path %}
+                    <a href="{{ path }}{{ anchor }}" class="navigation navigation-next {% if not (previous and path) %}navigation-unique{% endif %}" aria-label="Next page: {{ title }}">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            {% endif %}
+        {% endblock %}
+    {% endblock %}
+</div>
+
+</div>
+{% endblock %}

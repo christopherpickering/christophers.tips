@@ -1,0 +1,16 @@
+{
+    "language":"en",
+	"title":"Christophers Tips",
+	"description":"About me and a few reminders",
+	"author":"Christopher Pickering",
+
+	"plugins":["-sharing"],
+	"styles": {
+        "website": "styles/my.css"
+    },
+    "site_name":"Christophers Tips",
+    "variables":{
+        "site_name":"Christophers Tips",
+        "desc_git":"A collection of several git and github techniques"
+    }
+}

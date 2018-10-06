@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Christophers Tips</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="About me and a few reminders">
+        <meta name="author" content="Christopher Pickering">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../static/img/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">    
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/search.css"><link rel="stylesheet" href="../static/css/website.css"><link rel="stylesheet" href="../static/css/website1.css"><link rel="stylesheet" href="../static/css/my.css"><link rel="stylesheet" href="../static/css/style.css">
+        
+    </head>
+    <body>
+        
+    <div class="book">
+        <div class="book-summary">
+            
+                
+                
+                    <nav role="navigation">
+                        hi
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GITBOOK_LINK
+        </a>
+    </li>
+</ul>
+                    </nav>
+                
+            
+        </div>
+        <div class="book-body">
+            
+                <div class="body-inner">
+                    
+                        
+
+<div class="book-header" role="navigation">
+    
+
+    <div class="pull-right my-site-name" >Christophers Tips<!--Christophers.Tips--></div>
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="/" >Christophers Tips</a>
+    </h1>
+	
+	
+
+</div>
+
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                
+                                    <section class="normal markdown-section">
+                                        
+                                            <h1>Setup a Mac for Django Web Development</h1>
+<h2>Create Python Working Environment</h2>
+<h3>Install Homebrew</h3>
+<p><code>sh
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+<h3>Install Python</h3>
+<p>```sh</p>
+<h1>for python2</h1>
+<p>brew install python</p>
+<h1>for python3</h1>
+<p>brew install python3
+```</p>
+<h3>Install PIP</h3>
+<p>```sh</p>
+<h1>for python2. pip3 comes with python3.</h1>
+<p>sudo easy_install pip
+```</p>
+<h3>Install virtual environment</h3>
+<p>```sh</p>
+<h1>for python2</h1>
+<p>pip install virtualenv</p>
+<h1>for python 3</h1>
+<p>pip3 install virtualenv
+```</p>
+<h3>Setup Project Directory</h3>
+<p>First create the projects directory.</p>
+<p><code>sh
+mkdir django-project
+cd django-project</code></p>
+<p>Create a virtual environment. The name venv can be whatver you like.</p>
+<p>```sh</p>
+<h1>for python2</h1>
+<p>virtualenv venv</p>
+<h1>for python3</h1>
+<p>virtualenv -p python3 venv
+```</p>
+<p>Active virtual environment</p>
+<p><code>sh
+source venv/bin/activate</code></p>
+<p>Install Django and other needed packages</p>
+<p><code>sh
+pip install django
+pip install &lt;packages&gt;</code></p>
+<p>To get out of venv</p>
+<p><code>sh
+deactivate</code></p>
+<h2>Create Django Site</h2>
+<p>Activate virtual environment</p>
+<p><code>sh
+source venv/bin/activate</code></p>
+<p>Create Django project</p>
+<p><code>sh
+django-admin startproject testsite</code></p>
+<p>Create Django app</p>
+<p><code>sh
+cd testsite
+python manage.py startapp myapp</code></p>
+<p>To run code on mac. </p>
+<p><code>sh
+python manage.py runserver</code></p>
+<p>Go to http://127.0.0.1:8000/ to see code in action.</p>
+<h2>Install Mysql</h2>
+<p>Get mysql from Brew</p>
+<p><code>sh
+brew install msyql</code></p>
+<p>Install the components for python.</p>
+<p><code>sh
+source venv/bin/activate
+pip install mysqlclient</code></p>
+<p>Turn on mysql with brew</p>
+<p><code>sh
+brew services start mysql</code></p>
+<p>Create mysql user.</p>
+<p><code>sh
+mysqladmin -u root password 'yourpassword'</code></p>
+<p>Access mysql through the command line to create your database.</p>
+<p><code>sh
+mysql -u root -p</code></p>
+<p>Create database</p>
+<p><code>sql
+CREATE DATABASE my_database;
+use my_database;
+-- show tables
+show tables;
+-- show databases
+show databases;</code></p>
+<p>Back to the virtual environment, we need to create all the needed project tables. Run:</p>
+<p><code>sh
+python manage.py makemigrations</code></p>
+<p>Resolve any errors... here would be a good place to use requirements.txt file :)</p>
+<p><code>sh
+python manage.py migrate</code></p>
+<h2>Import MySQL Database Fron Server</h2>
+<h3>Dump the Dababase on the server.</h3>
+<p>Login to the server, navigate to where you want to put the dump. Run this.</p>
+<p><code>sh
+mysqldump -u root -p --opt databasename &gt; databasename.sql</code></p>
+<h3>Copy the Database to Your New Intall</h3>
+<p>Next, on your new install (Mac or other server) you can pull in that database.</p>
+<p>```sh</p>
+<h1>for files</h1>
+<h1>sudo scp 'user'@'server':path/to/file.txt /path/on/host</h1>
+<h1>for folders</h1>
+<h1>sudo scp -r 'user'@'server':path/to/folder /path/on/host</h1>
+<p>sudo scp 'admin'@'server':~/database.sql ~/Documents/Projects/django-project/
+```</p>
+<h3>Import the Database</h3>
+<p>Finally the database can be imported on the new install. You must have already created the database in mysql.</p>
+<p><code>sh
+mysql -u root -p hostdatabasename &lt; databasename.sql</code></p>
+<h2>Setup Static Files on Development Machine</h2>
+<p>Replace the line with "STATIC_ROOT" in settings.py with</p>
+<p><code>python
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)</code></p>
+<p>Add the following snippet to the end of your urls.py file</p>
+<p><code>python
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+import settings
+if settings.DEBUG == True:
+    urlpatterns += staticfiles_urlpatterns()</code></p>
+<h1>Save project PIP requirements</h1>
+<p>Activate the virtual environment and run this to create a listing of required modules.
+<code>sh
+pip freeze &gt; requirements.txt</code></p>
+<h1>Put Project on Github</h1>
+<p>Create git. Don't forget to update .gitignore!</p>
+<p><code>sh
+$ git init
+$ touch .gitignore
+$ git add .
+$ git status
+$ git commit -m 'initial commit'
+$ git remote add origin https://github.com/username/reponame.git
+$ git push -u origin master</code></p>
+                                        
+                                    </section>
+                                
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+                
+                    
+                
+        
+    
+</div>
+
+</div>
+
+        <script src="../static/js/search-engine.js"></script><script src="../static/js/fontsettings.js"></script><script src="../static/js/theme.js"></script><script src="../static/js/search-lunr.js"></script><script src="../static/js/gitbook.js"></script><script src="../static/js/search.js"></script><script src="../static/js/lunr.min.js"></script>
+        
+    </body>
+</html>
+
