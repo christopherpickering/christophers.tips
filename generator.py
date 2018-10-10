@@ -5,6 +5,7 @@ import jinja2
 from pathlib import Path, PurePosixPath
 import shutil
 import markdown
+from datetime import datetime
 
 base_dir = Path(__file__).parents[0]
 
@@ -50,15 +51,16 @@ with open('book.json') as f:
 pages = [child for child in Path(pages_root).iterdir() if PurePosixPath(Path(child)).stem != ".DS_Store"]
 
 for page in pages:
-    print(page)
+
+    page_update_date = datetime.fromtimestamp(page.stat().st_mtime).strftime('%B %d,%Y %H:%M').lstrip("0").replace(" 0", " ")
+
     with open(page,encoding="utf-8") as f:
         contents = md.convert(f.read())
 
     my_page = PurePosixPath(Path(page)).stem
     myfname = website_root.joinpath('pages').joinpath(my_page).with_suffix('.html')
     
-    contents = templates.get_template('page.html').render(data, content = contents, js = js, css = css)
-
+    contents = templates.get_template('page.html').render(data, content = contents, js = js, css = css, update_date = page_update_date)
 
     with myfname.open('w+',encoding="utf-8") as wf:
         wf.write(contents)
