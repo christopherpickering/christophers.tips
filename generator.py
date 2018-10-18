@@ -29,7 +29,12 @@ templates = jinja2.Environment(
 
 # remove old build
 # next step, clone and only update changes
+
+shutil.rmtree(base_dir / 'git', ignore_errors=True)
+shutil.copytree(website_root / '.git', base_dir / 'git')
 shutil.rmtree(website_root,ignore_errors=True)
+shutil.copytree(base_dir / 'git', website_root / '.git')
+shutil.rmtree(base_dir / 'git', ignore_errors=True)
 
 # copy static files
 shutil.copytree(static_root,website_root / 'static' ) 
