@@ -2,7 +2,7 @@
 
 Initialize a get repo
 
-```bash
+```sh
 git init
 ```
 

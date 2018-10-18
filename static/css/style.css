@@ -18,13 +18,15 @@ audio:not([controls]) {
 }
 
 html {
-    font-family: sans-serif;
+    font-family: "adobe-caslon-pro" serif; 
+
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
 }
 
 body {
-    margin: 0
+    margin: 0;
+    background-color:#fff;
 }
 
 a:focus {
