@@ -3410,6 +3410,7 @@ table {
     text-transform: uppercase;
     color: #ed5740;
     font-family: "alternate-gothic-no-2-d",sans-serif !important;
+    font-size:1.9em;
 }
 
 .book-summary ul.summary li.divider {
@@ -3454,7 +3455,6 @@ ul.summary li.chapter {
     color:#494949;
     font-family: "adobe-caslon-pro", serif;
     font-size: 1em !important;
-    font-weight: bold !important;    
     letter-spacing: 1.2px !important;
 }
 
