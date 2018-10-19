@@ -1,6 +1,5 @@
 {% extends "./layout.html" %}
-{% block title %}{{ title }} · {{ super() }}{% endblock %}
-{% block description %}{{ description }}{% endblock %}
+
 {% block head %}
     {{ super() }}
     {% if next and path %}
@@ -10,6 +9,7 @@
         <link rel="prev" href="{{ path }}" />
     {% endif %}
 {% endblock %}
+
 
 {% block body %}
     <div class="book">
