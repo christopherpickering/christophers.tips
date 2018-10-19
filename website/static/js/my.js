@@ -1,4 +1,4 @@
-(function($) {
+ $(document).ready(function(e) {
 console.log('started script')
 $('body').on('click', '.js-toolbar-action', function(event) {
     event.preventDefault();
