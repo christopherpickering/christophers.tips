@@ -3171,7 +3171,6 @@ table {
 }
 
 .book-header {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow: visible;
     height: 50px;
     padding: 0 8px;
@@ -3209,7 +3208,6 @@ table {
 .book-header h2 {
     margin: 0;
    /* font-size: 20px;*/
-    font-weight: 200;
     text-align: center;
     line-height: 50px;
     opacity: 0;
