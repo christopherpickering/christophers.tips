@@ -534,7 +534,7 @@ table {
     position: absolute;
     left: 0;
     width: 100%;
-    text-align: center
+    text-align: center;
 }
 
 .fa-stack-1x {
@@ -3206,12 +3206,12 @@ table {
     outline: 0
 }
 
-.book-header h1 {
+.book-header h2 {
     margin: 0;
-   /* font-size: 20px;*/
-    font-weight: 200;
+   /* font-size: 20px;
+    font-weight: 200;*/
     text-align: center;
-    line-height: 50px;
+   
     opacity: 0;
     -webkit-transition: opacity ease .4s;
     -moz-transition: opacity ease .4s;
