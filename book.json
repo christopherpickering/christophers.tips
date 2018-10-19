@@ -14,11 +14,10 @@
         "desc_git":"A collection of several git and github techniques"
     },
     "navigation":{
-        "Home":{
-            "Git":"git"
-        },
+
         "MISC":{
-            "Make this Site":"make_this_site"
+            "Make this Site":"make_this_site",
+            "Git":"git"
         },
         "Web Development":{
             "Django on Mac":"Mac_Django_Setup",
