@@ -3371,7 +3371,7 @@ table {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
     top: 0;
-    /*left: -300px;*/
+    left: -300px;
     bottom: 0;
     z-index: 1;
     overflow-y: auto;
