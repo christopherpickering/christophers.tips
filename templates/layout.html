@@ -1,23 +1,28 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>{% if title %}{{ title }}{% else %}Christophers Tips{% endif %}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+        <title>{% if title %}{{ title }}{% else %}Christophers Tips{% endif %}</title>
         <meta name="description" content="{% block description %}{% endblock %}">
         <meta name="author" content="{{ author }}">
+        <meta name="keywords" content="{{ keywords }}">
+        <base href="https://christophers.tips/test-site/" target="_blank">
+
         <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <!-- typekit -->
         <link rel="stylesheet" href="https://use.typekit.net/wtg5gdq.css">
         <!-- styles -->    
-        <link rel="stylesheet" href="/test-site/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/style.css">
         <!-- code highlight-->
-        <link rel="stylesheet" href="/test-site/static/css/highlight.css">
+        <link rel="stylesheet" href="/static/css/highlight.css">
 
         {% block includes %}{% endblock %}
         
