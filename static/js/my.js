@@ -1,5 +1,5 @@
 (function($) {
-
+console.log('started script')
 $('body').on('click', '.js-toolbar-action', function(event) {
     console.log('clicked')
         var $img = $('.book');
