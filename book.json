@@ -12,5 +12,22 @@
     "variables":{
         "site_name":"Christophers Tips",
         "desc_git":"A collection of several git and github techniques"
+    },
+    "navigation":{
+        "Home":{
+            "Git":"git"
+        },
+        "MISC":{
+            "Make this Site":"make_this_site"
+        },
+        "Web Development":{
+            "Django on Mac":"Mac_Django_Setup",
+            "Ubuntu Server":"ubuntu_server"
+        },
+        "devider":"",
+        "Database Connections":{
+            "Ubuntu CX Oracle":"cx_oracle_ubuntu",
+            "Mac pyodbc":"pyodbc_mac"
+        }
     }
 }

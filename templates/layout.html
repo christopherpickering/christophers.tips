@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="{{ language }}" dir="ltr">
+<html>
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -11,15 +11,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ "../static/img/apple-touch-icon-precomposed-152.png" }}">
-        <link rel="shortcut icon" href="{{ "../static/img/favicon.ico" }}" type="image/x-icon">    
+
+        <!-- typekit -->
         <link rel="stylesheet" href="https://use.typekit.net/wtg5gdq.css">
+        <!-- styles -->    
+        <link rel="stylesheet" href="/test-site/static/css/style.css">
+        <!-- code highlight-->
+        <link rel="stylesheet" href="/test-site/static/css/highlight.css">
+
+        {% block includes %}{% endblock %}
+        
     </head>
     <body>
         {% block body %}{% endblock %}
-        <script src="../static/js/gitbook.js"></script>
-        <script src="../static/js/jquery.js"></script>
-        {% for j in js %}<script src="../{{ j }}"></script>{% endfor %}
+        <!--<script src="../static/js/gitbook.js"></script>-->
+        <!--<script src="../static/js/jquery.js"></script>-->
+        {% for j in js %}<!--<script src="../{{ j }}"></script>-->{% endfor %}
         {% block javascript %}{% endblock %}
     </body>
 </html>

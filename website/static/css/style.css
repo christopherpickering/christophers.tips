@@ -1,3 +1,123 @@
+.gitbook-link {
+    display: none !important;
+}
+
+.my-site-name {
+    padding-right:15px;
+    line-height: 50px;
+    font-size:14px;
+}
+
+.markdown-section pre {
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+    border: 1px solid #ccc !important;
+}
+
+.book-summary ul.summary li.header {
+    color: #333;
+    font-weight: 500;
+}
+
+.book-summary ul.summary li a, .book-summary ul.summary li span {
+    padding: 10px 45px;
+}
+
+body, html {
+    height: 100%
+}
+
+html {
+    font-family: "adobe-caslon-pro", serif;
+    font-size: 1.3em ;
+    color:#494949;
+    text-align: justify;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+h1,span,b,i{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    word-break: keep-all;
+    line-height: 50%;
+}
+
+/*  1em = 12pt = 16px = 100% */
+h1,
+h2,
+h3,
+h4 {
+    /*text-align: center;*/
+    line-height: 1 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+h1 {
+    text-transform: uppercase !important;
+    font-weight: 400 !important;
+    color: #4EB7D9 !important;
+    font-size: 3.5em !important;
+}
+
+h2 {
+    color: #494949 !important;
+    font-size: 1.8em !important;
+    font-weight:bold !important;
+    text-align: justify !important;
+    margin: 0 !important;
+    letter-spacing:1px !important;
+    line-height:110% !important;
+    padding-bottom: 5px !important;
+}
+
+h3 {
+    text-transform: uppercase !important;
+    font-weight: 300 !important;
+    font-size: 4em !important;
+    color: #4EB7D9 !important;
+}
+
+h4 {
+    color: #494949 !important;
+    font-size: 1.5em !important;
+    line-height:120% !important;
+    letter-spacing:1px !important;
+    font-weight:100 !important;
+}
+
+h6 {
+    color: #494949 !important;
+    font-size: 1.5em !important;
+    line-height:120% !important;
+    letter-spacing:1px !important;
+}
+
+h5 {
+    font-size: 2.2em !important;
+    line-height:120% !important;
+    font-weight: 100 !important;
+    color: #494949 !important;
+    /*margin-left:16%;
+    margin-right:16%;*/
+    margin-top:1.5em !important;
+}
+
+h1, h3 {
+    font-family: "alternate-gothic-no-2-d",sans-serif !important;
+}
+
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 article, aside, details, figcaption, figure, footer, header, hgroup,
 main, nav, section, summary {
@@ -18,8 +138,6 @@ audio:not([controls]) {
 }
 
 html {
-    font-family: "adobe-caslon-pro" serif; 
-
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
 }
@@ -37,10 +155,7 @@ a:active, a:hover {
     outline: 0
 }
 
-h1 {
-    font-size: 2em;
-    margin: .67em 0
-}
+
 
 abbr[title] {
     border-bottom: 1px dotted
@@ -67,7 +182,7 @@ mark {
 
 code, kbd, pre, samp {
     font-family: monospace, serif;
-    font-size: 1em
+    font-size: .85em !important;
 }
 
 pre {
@@ -3043,7 +3158,7 @@ table {
     width: 50%;
     float: left;
     padding: 10px 5px;
-    font-size: 16px
+    /*font-size: 16px*/
 }
 
 @media (max-width:600px) {
@@ -3059,7 +3174,7 @@ table {
     height: 50px;
     padding: 0 8px;
     z-index: 2;
-    font-size: .85em;
+    /*font-size: .85em;*/
     color: #7e888b;
     background: 0 0
 }
@@ -3075,7 +3190,7 @@ table {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     position: relative;
-    font-size: 14px
+    /*font-size: 14px*/
 }
 
 .book-header .btn:hover {
@@ -3091,7 +3206,7 @@ table {
 
 .book-header h1 {
     margin: 0;
-    font-size: 20px;
+   /* font-size: 20px;*/
     font-weight: 200;
     text-align: center;
     line-height: 50px;
@@ -3153,7 +3268,7 @@ table {
     padding: 0;
     margin: 2px 0 0;
     list-style: none;
-    font-size: 14px;
+   /* font-size: 14px;*/
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .07);
     border-radius: 1px;
@@ -3259,7 +3374,7 @@ table {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
     top: 0;
-    left: -300px;
+    /*left: -300px;*/
     bottom: 0;
     z-index: 1;
     overflow-y: auto;
@@ -3306,7 +3421,7 @@ table {
     position: absolute;
     right: 9px;
     top: 16px;
-    font-size: 9px;
+ /*   font-size: 9px;*/
     color: #3c3
 }
 
@@ -3329,6 +3444,10 @@ table {
     overflow: hidden;
     white-space: nowrap;
     position: relative
+}
+
+ul.summary li.chapter {
+padding: 0px 45px;
 }
 
 .book-summary ul.summary li a:hover {
@@ -3405,7 +3524,7 @@ table {
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
+    left: 300px;
     bottom: 0;
     overflow-y: auto;
     color: #000;
@@ -3500,8 +3619,12 @@ table {
     display: block;
     word-wrap: break-word;
     overflow: hidden;
-    color: #333;
+    color: #494949;
     line-height: 1.7;
+    letter-spacing: 1px;
+    font-weight: 100px;
+    line-height: 135%;
+    text-align:justify;
     text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -3656,7 +3779,7 @@ table {
 .markdown-section code {
     padding: .2em;
     margin: 0;
-    font-size: .85em;
+    font-size: .85em !important;
     background-color: #f7f7f7
 }
 
@@ -4126,7 +4249,7 @@ body.with-search .navigation {
     display: none
 }
 
-* {
+/** {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -4136,28 +4259,9 @@ body.with-search .navigation {
     -webkit-touch-callout: none;
     -webkit-font-smoothing: antialiased
 }
-
+*/
 a {
     text-decoration: none
-}
-
-body, html {
-    height: 100%
-}
-
-html {
-    font-size: 62.5%
-}
-
-body {
-    text-rendering: optimizeLegibility;
-    font-smoothing: antialiased;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    letter-spacing: .2px;
-    text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
 }
 
 

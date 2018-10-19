@@ -1,8 +1,14 @@
 # Getting Started
 
+## Setup Git
+```sh
+git config user.name "Firstname Lastname"
+git config user.email "email@email.com"
+```
+
 Initialize a get repo
 
-```sh
+```bash
 git init
 ```
 
@@ -76,6 +82,12 @@ To delete a branch
 git branch -d 
 ```
 
+To reset a branch to master
+
+```sh
+git reset --hard master
+```
+
 Want to get a file from another branch? Checkout the branch you want to copy the file(s) too. Then checkout the files from the source branch. Don't forget to commit when finished adding files.
 
 ```bash
@@ -134,8 +146,16 @@ To remove excluded files from commit
 git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 ```
 
-Create Alias for this command. Open git global config and paste in `apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached`
+Create Alias for this command so you can run 'git apply-gitignore' to fix any commit that missed updates in gitignore.
 
 ```bash
+# change editor to nano
+git config --global core.editor "nano"
+
+# edit file
 git config --global --edit
+
+# add following text
+[alias]
+   apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached 
 ```

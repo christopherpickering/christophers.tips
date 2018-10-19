@@ -116,7 +116,77 @@
                                 
                                     <section class="normal markdown-section">
                                         
-                                            <h1>Homebrew</h1>
+                                            <h1>Installing Pyodbc on a Mac</h1>
+
+<h2>Install FreeTDS and UnixODBC</h2>
+
+<div class="codehilite"><pre><span></span><code>brew install unixodbc
+brew install freetds --with-unixodbc
+</code></pre></div>
+
+<h2>Configure TDS Connection Information</h2>
+
+<p>Edit the file /usr/local/etc/freetds.conf</p>
+
+<div class="codehilite"><pre><span></span><code>nano /usr/local/etc/freetds.conf
+</code></pre></div>
+
+<p>Add your connection information to the end. </p>
+
+<div class="codehilite"><pre><span></span><code><span class="o">[</span>&lt;connection_name&gt;<span class="o">]</span>
+<span class="nv">host</span> <span class="o">=</span> &lt;hostname&gt;
+<span class="nv">port</span> <span class="o">=</span> &lt;port&gt;
+tds <span class="nv">version</span> <span class="o">=</span> <span class="m">7</span>.0
+</code></pre></div>
+
+<p>Test the new connection with </p>
+
+<div class="codehilite"><pre><span></span><code>tsql -S &lt;connection_name&gt; -U &lt;username&gt; -P &lt;password&gt;
+</code></pre></div>
+
+<h2>Add TDS Connection info to the ODBC driver list</h2>
+
+<p>Run odbcinst -j to find the file directories for odbcinst.ini and odbc.ini</p>
+
+<p>Update odbcinst.ini to include the info below.</p>
+
+<div class="codehilite"><pre><span></span><code>odbcinst -j
+
+<span class="c1"># get path from results of odbcinst -j</span>
+nano /usr/local/etc/odbcinst.ini
+
+<span class="o">[</span>FreeTDS<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>FreeTDS Driver <span class="k">for</span> Linux <span class="p">&amp;</span> MSSQL
+<span class="nv">Driver</span><span class="o">=</span>/usr/local/lib/libtdsodbc.so
+<span class="nv">Setup</span><span class="o">=</span>/usr/local/lib/libtdsodbc.so
+<span class="nv">UsageCount</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c1"># control x to save</span>
+</code></pre></div>
+
+<p>Next, edit the odbc.ini file.</p>
+
+<p>Add the following info.</p>
+
+<div class="codehilite"><pre><span></span><code>odbcinst -j
+
+<span class="c1"># get path from results of odbcinst -j</span>
+nano /usr/local/etc/odbc.ini
+
+<span class="o">[</span>&lt;connection_name&gt;<span class="o">]</span>
+<span class="nv">Description</span>         <span class="o">=</span> &lt;connection_description&gt;
+<span class="nv">Driver</span>              <span class="o">=</span> FreeTDS 
+<span class="nv">Servername</span>          <span class="o">=</span> &lt;connection_name&gt;
+
+<span class="c1"># note: FreeTDS must match the name given in odbcinst.ini</span>
+</code></pre></div>
+
+<h2>Install pyodbc</h2>
+
+<p>Finally, pyodbc for python can be installed</p>
+
+<div class="codehilite"><pre><span></span><code>pip install pyodbc
+</code></pre></div>
 
                                         
                                     </section>
