@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+        <title>Christophers Tips</title>
+        <meta name="description" content="">
+        <meta name="author" content="Christopher Pickering">
+        <meta name="keywords" content="">
+
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <!-- typekit -->
+        <link rel="stylesheet" href="https://use.typekit.net/wtg5gdq.css">
+        <!-- styles -->    
+        <link rel="stylesheet" href="/test-site/static/css/style.css">
+        <!-- code highlight-->
+        <link rel="stylesheet" href="/test-site/static/css/highlight.css">
+          
+        
+
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    </head>
+    <body>
+
+        
+    <div class="book with-summary">
+        <div class="book-summary">
+            
+                
+                
+                    <nav role="navigation">
+                        <ul class="summary">
+    <li class="header" style="text-align: center;"><a href="/test-site/">Christophers Tips</a></li>
+    <li class="divider"></li>
+    
+        
+            <li class="header">MISC</li>
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/make_this_site.html">Make this Site</a>
+                </li>
+                
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/git.html">Git</a>
+                </li>
+                
+            
+        
+    
+        
+            <li class="header">Web Development</li>
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/Mac_Django_Setup.html">Django on Mac</a>
+                </li>
+                
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/ubuntu_server.html">Ubuntu Server</a>
+                </li>
+                
+            
+        
+    
+        
+            <li class="divider"></li>
+        
+    
+        
+            <li class="header">Database Connections</li>
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/cx_oracle_ubuntu.html">Ubuntu CX Oracle</a>
+                </li>
+                
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/pyodbc_mac.html">Mac pyodbc</a>
+                </li>
+                
+            
+        
+    
+</ul>
+                    </nav>
+                
+            
+        </div>
+        <div class="book-body">
+            
+                <div class="body-inner">
+                    
+                        
+
+<div class="book-header" role="navigation">
+    
+
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="#"><i class="fa fa-align-justify"></i></a>
+
+    <!-- Title -->
+    <h2>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="/test-site/" >Christophers Tips</a>
+    </h2>
+	
+	
+
+</div>
+
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                
+                                    <section class="normal markdown-section">
+                                        
+                                            <h1>Setup a Mac for Django Web Development</h1>
+
+<h2>Create Python Working Environment</h2>
+
+<h3>Install Homebrew</h3>
+
+<div class="codehilite"><pre><span></span><code>$ /usr/bin/ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<h3>Install Python</h3>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># for python2</span>
+brew install python
+<span class="c1"># for python3</span>
+brew install python3
+</code></pre></div>
+
+<h3>Install PIP</h3>
+
+<div class="codehilite"><pre><span></span><code><span class="c1">#for python2. pip3 comes with python3.</span>
+sudo easy_install pip
+</code></pre></div>
+
+<h3>Install virtual environment</h3>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># for python2</span>
+pip install virtualenv
+<span class="c1"># for python 3</span>
+pip3 install virtualenv
+</code></pre></div>
+
+<h3>Setup Project Directory</h3>
+
+<p>First create the projects directory.</p>
+
+<div class="codehilite"><pre><span></span><code>mkdir django-project
+<span class="nb">cd</span> django-project
+</code></pre></div>
+
+<p>Create a virtual environment. The name venv can be whatver you like.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># for python2</span>
+virtualenv venv
+<span class="c1"># for python3</span>
+virtualenv -p python3 venv
+</code></pre></div>
+
+<p>Active virtual environment</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span> venv/bin/activate
+</code></pre></div>
+
+<p>Install Django and other needed packages</p>
+
+<div class="codehilite"><pre><span></span><code>pip install django
+pip install &lt;packages&gt;
+</code></pre></div>
+
+<p>To get out of venv</p>
+
+<div class="codehilite"><pre><span></span><code>deactivate
+</code></pre></div>
+
+<h2>Create Django Site</h2>
+
+<p>Activate virtual environment</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span> venv/bin/activate
+</code></pre></div>
+
+<p>Create Django project</p>
+
+<div class="codehilite"><pre><span></span><code>django-admin startproject testsite
+</code></pre></div>
+
+<p>Create Django app</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> testsite
+python manage.py startapp myapp
+</code></pre></div>
+
+<p>To run code on mac. </p>
+
+<div class="codehilite"><pre><span></span><code>python manage.py runserver
+</code></pre></div>
+
+<p>Go to http://127.0.0.1:8000/ to see code in action.</p>
+
+<h2>Install Mysql</h2>
+
+<p>Get mysql from Brew</p>
+
+<div class="codehilite"><pre><span></span><code>brew install msyql
+</code></pre></div>
+
+<p>Install the components for python.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span> venv/bin/activate
+pip install mysqlclient
+</code></pre></div>
+
+<p>Turn on mysql with brew</p>
+
+<div class="codehilite"><pre><span></span><code>brew services start mysql
+</code></pre></div>
+
+<p>Create mysql user.</p>
+
+<div class="codehilite"><pre><span></span><code>mysqladmin -u root password <span class="s1">&#39;yourpassword&#39;</span>
+</code></pre></div>
+
+<p>Access mysql through the command line to create your database.</p>
+
+<div class="codehilite"><pre><span></span><code>mysql -u root -p
+</code></pre></div>
+
+<p>Create database</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">my_database</span><span class="p">;</span>
+<span class="n">use</span> <span class="n">my_database</span><span class="p">;</span>
+<span class="c1">-- show tables</span>
+<span class="k">show</span> <span class="n">tables</span><span class="p">;</span>
+<span class="c1">-- show databases</span>
+<span class="k">show</span> <span class="n">databases</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Back to the virtual environment, we need to create all the needed project tables. Run:</p>
+
+<div class="codehilite"><pre><span></span><code>python manage.py makemigrations
+</code></pre></div>
+
+<p>Resolve any errors... here would be a good place to use requirements.txt file :)</p>
+
+<div class="codehilite"><pre><span></span><code>python manage.py migrate
+</code></pre></div>
+
+<h2>Import MySQL Database Fron Server</h2>
+
+<h3>Dump the Dababase on the server.</h3>
+
+<p>Login to the server, navigate to where you want to put the dump. Run this.</p>
+
+<div class="codehilite"><pre><span></span><code>mysqldump -u root -p --opt databasename &gt; databasename.sql
+</code></pre></div>
+
+<h3>Copy the Database to Your New Intall</h3>
+
+<p>Next, on your new install (Mac or other server) you can pull in that database.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># for files</span>
+<span class="c1"># sudo scp &#39;user&#39;@&#39;server&#39;:path/to/file.txt /path/on/host</span>
+<span class="c1"># for folders</span>
+<span class="c1"># sudo scp -r &#39;user&#39;@&#39;server&#39;:path/to/folder /path/on/host</span>
+
+sudo scp <span class="s1">&#39;admin&#39;</span>@<span class="s1">&#39;server&#39;</span>:~/database.sql ~/Documents/Projects/django-project/
+</code></pre></div>
+
+<h3>Import the Database</h3>
+
+<p>Finally the database can be imported on the new install. You must have already created the database in mysql.</p>
+
+<div class="codehilite"><pre><span></span><code>mysql -u root -p hostdatabasename &lt; databasename.sql
+</code></pre></div>
+
+<h2>Setup Static Files on Development Machine</h2>
+
+<p>Replace the line with "STATIC_ROOT" in settings.py with</p>
+
+<div class="codehilite"><pre><span></span><code><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;static&#39;</span><span class="p">),)</span>
+</code></pre></div>
+
+<p>Add the following snippet to the end of your urls.py file</p>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.staticfiles.urls</span> <span class="kn">import</span> <span class="n">staticfiles_urlpatterns</span>
+<span class="kn">import</span> <span class="nn">settings</span>
+<span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">staticfiles_urlpatterns</span><span class="p">()</span>
+</code></pre></div>
+
+<h1>Save project PIP requirements</h1>
+
+<p>Activate the virtual environment and run this to create a listing of required modules.</p>
+
+<div class="codehilite"><pre><span></span><code>pip freeze &gt; requirements.txt
+</code></pre></div>
+
+<h1>Put Project on Github</h1>
+
+<p>Create git. Don't forget to update .gitignore!</p>
+
+<div class="codehilite"><pre><span></span><code>$ git init
+$ touch .gitignore
+$ git add .
+$ git status
+$ git commit -m <span class="s1">&#39;initial commit&#39;</span>
+$ git remote add origin https://github.com/username/reponame.git
+$ git push -u origin master
+</code></pre></div>
+
+                                        
+                                    </section>
+                                
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+                
+                    
+                
+        
+    
+</div>
+
+</div>
+
+        <!--<script src="../static/js/gitbook.js"></script>-->
+        <!--<script src="../static/js/jquery.js"></script>-->
+        <!--<script src="../static/js/my.js"></script>-->
+        
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>     
+        <script src="/test-site/static/js/my.js"></script>
+    </body>
+</html>
+

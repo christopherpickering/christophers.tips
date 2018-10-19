@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+        <title>Christophers Tips</title>
+        <meta name="description" content="">
+        <meta name="author" content="Christopher Pickering">
+        <meta name="keywords" content="">
+
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <!-- typekit -->
+        <link rel="stylesheet" href="https://use.typekit.net/wtg5gdq.css">
+        <!-- styles -->    
+        <link rel="stylesheet" href="/test-site/static/css/style.css">
+        <!-- code highlight-->
+        <link rel="stylesheet" href="/test-site/static/css/highlight.css">
+          
+        
+
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    </head>
+    <body>
+
+        
+    <div class="book with-summary">
+        <div class="book-summary">
+            
+                
+                
+                    <nav role="navigation">
+                        <ul class="summary">
+    <li class="header" style="text-align: center;"><a href="/test-site/">Christophers Tips</a></li>
+    <li class="divider"></li>
+    
+        
+            <li class="header">MISC</li>
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/make_this_site.html">Make this Site</a>
+                </li>
+                
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/git.html">Git</a>
+                </li>
+                
+            
+        
+    
+        
+            <li class="header">Web Development</li>
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/Mac_Django_Setup.html">Django on Mac</a>
+                </li>
+                
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/ubuntu_server.html">Ubuntu Server</a>
+                </li>
+                
+            
+        
+    
+        
+            <li class="divider"></li>
+        
+    
+        
+            <li class="header">Database Connections</li>
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/cx_oracle_ubuntu.html">Ubuntu CX Oracle</a>
+                </li>
+                
+            
+                <li class="chapter">
+                    <a href="/test-site/pages/pyodbc_mac.html">Mac pyodbc</a>
+                </li>
+                
+            
+        
+    
+</ul>
+                    </nav>
+                
+            
+        </div>
+        <div class="book-body">
+            
+                <div class="body-inner">
+                    
+                        
+
+<div class="book-header" role="navigation">
+    
+
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="#"><i class="fa fa-align-justify"></i></a>
+
+    <!-- Title -->
+    <h2>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="/test-site/" >Christophers Tips</a>
+    </h2>
+	
+	
+
+</div>
+
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                
+                                    <section class="normal markdown-section">
+                                        
+                                            <h1>Getting Started</h1>
+
+<h2>Setup Git</h2>
+
+<div class="codehilite"><pre><span></span><code>git config user.name <span class="s2">&quot;Firstname Lastname&quot;</span>
+git config user.email <span class="s2">&quot;email@email.com&quot;</span>
+</code></pre></div>
+
+<p>Initialize a get repo</p>
+
+<div class="codehilite"><pre><span></span><code>git init
+</code></pre></div>
+
+<p>Create a .gitignore file to keep unneeded or confidential information from the repository.</p>
+
+<div class="codehilite"><pre><span></span><code>touch .gitignore
+</code></pre></div>
+
+<p>Alternativly you can pre-create one here https://www.gitignore.io, or copy and past into the .gitignore.</p>
+
+<hr />
+
+<h1>Add Content</h1>
+
+<h2>From GitHub</h2>
+
+<p>If the project already exists on GitHub and you plan to contribute it can be pulled.</p>
+
+<div class="codehilite"><pre><span></span><code>git remote add origin https://github.com/username/project_name.git
+git pull
+</code></pre></div>
+
+<p>To take a copy of the code for your own use</p>
+
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/username/project_name.git
+</code></pre></div>
+
+<h2>Create Branch</h2>
+
+<p>Run this command to get a list of branches and the current branch.</p>
+
+<div class="codehilite"><pre><span></span><code>git branch 
+</code></pre></div>
+
+<p>To create a new branch</p>
+
+<div class="codehilite"><pre><span></span><code>git branch &lt;my_new_branch&gt;
+</code></pre></div>
+
+<p>To change current working branch</p>
+
+<div class="codehilite"><pre><span></span><code>git checkout &lt;my_branch&gt;
+</code></pre></div>
+
+<p>Create the branch from GitHub locally and switch to it</p>
+
+<div class="codehilite"><pre><span></span><code>git checkout -b &lt;my_branch&gt;
+</code></pre></div>
+
+<p>Update a branch if the remote has changed</p>
+
+<div class="codehilite"><pre><span></span><code>git fetch origin
+</code></pre></div>
+
+<p>Merge a branch back to master</p>
+
+<div class="codehilite"><pre><span></span><code>git checkout master
+git merge &lt;my_branch&gt;
+</code></pre></div>
+
+<p>To delete a branch</p>
+
+<div class="codehilite"><pre><span></span><code>git branch -d 
+</code></pre></div>
+
+<p>To reset a branch to master</p>
+
+<div class="codehilite"><pre><span></span><code>git reset --hard master
+</code></pre></div>
+
+<p>Want to get a file from another branch? Checkout the branch you want to copy the file(s) too. Then checkout the files from the source branch. Don't forget to commit when finished adding files.</p>
+
+<div class="codehilite"><pre><span></span><code>git checkout &lt;destination_branch&gt;
+git checkout &lt;source_branch&gt; &lt;paths&gt;
+git commit -a -m <span class="s2">&quot;added a couple files from the other branch&quot;</span>
+</code></pre></div>
+
+<h1>Commit Code</h1>
+
+<h2>To Git</h2>
+
+<p>Run these commands to commit latest changes.</p>
+
+<div class="codehilite"><pre><span></span><code>git add .
+git commit -m <span class="s1">&#39;comment about latest changes&#39;</span>
+</code></pre></div>
+
+<p>Or more condensed</p>
+
+<div class="codehilite"><pre><span></span><code>git commit -a -m <span class="s1">&#39;comment about latest changes&#39;</span>
+</code></pre></div>
+
+<h2>To GitHub</h2>
+
+<p>Add GitHub as a remote</p>
+
+<div class="codehilite"><pre><span></span><code>git remote add origin https://github.com/username/project_name.git
+</code></pre></div>
+
+<p>If you want to change remote or had a spelling mistake (opps)</p>
+
+<div class="codehilite"><pre><span></span><code>git remote rm origin
+git remote add origin https://github.com/username/project_name.git
+</code></pre></div>
+
+<p>Push to remote</p>
+
+<div class="codehilite"><pre><span></span><code>git push origin &lt;branch name&gt;
+Removing files that are in .gitignore
+</code></pre></div>
+
+<p>To see files that are not excluded by .gitignore</p>
+
+<div class="codehilite"><pre><span></span><code>git ls-files -ci --exclude-standard
+</code></pre></div>
+
+<p>To remove excluded files from commit</p>
+
+<div class="codehilite"><pre><span></span><code>git ls-files -ci --exclude-standard -z <span class="p">|</span> xargs -0 git rm --cached
+</code></pre></div>
+
+<p>Create Alias for this command so you can run 'git apply-gitignore' to fix any commit that missed updates in gitignore.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># change editor to nano</span>
+git config --global core.editor <span class="s2">&quot;nano&quot;</span>
+
+<span class="c1"># edit file</span>
+git config --global --edit
+
+<span class="c1"># add following text</span>
+<span class="o">[</span>alias<span class="o">]</span>
+   apply-gitignore <span class="o">=</span> !git ls-files -ci --exclude-standard -z <span class="p">|</span> xargs -0 git rm --cached 
+</code></pre></div>
+
+                                        
+                                    </section>
+                                
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+                
+                    
+                
+        
+    
+</div>
+
+</div>
+
+        <!--<script src="../static/js/gitbook.js"></script>-->
+        <!--<script src="../static/js/jquery.js"></script>-->
+        <!--<script src="../static/js/my.js"></script>-->
+        
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>     
+        <script src="/test-site/static/js/my.js"></script>
+    </body>
+</html>
+

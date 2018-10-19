@@ -122,9 +122,63 @@
                                 
                                     <section class="normal markdown-section">
                                         
-                                            <h1>Hi, I'm Christopher Pickering</h1>
+                                            <h1>Setting Up Cx_Oracle on Linux/Ubuntu</h1>
 
-<p>Thanks for visiting.</p>
+<p>[Cx_Oracle Docs]</p>
+
+<h2>Download Instant Client</h2>
+
+<p>On host computer (Mac in this case) [donwload] the instant client basic and skd rpn's. Oracle changed the name on sdk's to devel.</p>
+
+<p>oracle-instantclient18.3-basic-18.3.0.0.0-1.x86<em>64.rpm
+oracle-instantclient18.3-devel-18.3.0.0.0-1.x86</em>64.rpm </p>
+
+<p>Put the files in a known directory. In my case I put the files in ~/Documents/Projects/Oracle</p>
+
+<h2>Move Instant Client files to Server</h2>
+
+<p>Login to the server. Run this command to copy the full Oracle directory with both rpn's from the Mac host to the server.
+On the Mac host don't forget to allow ssh connections. "System Preferences" &gt; "Sharing" &gt; "Remote Login" &gt; "On"</p>
+
+<div class="codehilite"><pre><span></span><code>sudo mkdir /home/Oracle
+sudo scp -r <span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;machost&#39;</span>:~/Documents/Projects/Oracle /home/
+</code></pre></div>
+
+<h2>Install Instant Client</h2>
+
+<p>Use alian to convert both rpn's to deb and install.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /home/Oracle
+sudo apt-get install alien
+sudo alien -i oracle-instantclient18.3-basic-18.3.0.0.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient18.3-devel-18.3.0.0.0-1.x86_64.rpm 
+<span class="c1"># uninstall alien if no longer needed</span>
+sudo apt-get purge --auto-remove alien
+sudo rm -rf /home/Oracle
+</code></pre></div>
+
+<p>Install the packages needed on Ubuntu</p>
+
+<div class="codehilite"><pre><span></span><code>sudo apt-get install libaio-dev
+</code></pre></div>
+
+<h2>Change Oracle Settings</h2>
+
+<p>Add oracle to the system path. </p>
+
+<div class="codehilite"><pre><span></span><code>sudo sh -c <span class="s2">&quot;echo /usr/lib/oracle/18.3/client64/lib &gt; /etc/ld.so.conf.d/oracle-instantclient.conf&quot;</span>
+sudo ldconfig
+</code></pre></div>
+
+<p>If you plan to use tnsnames.ora you can create the directory here. This is the default location for oracle.</p>
+
+<div class="codehilite"><pre><span></span><code>sudo mkdir -p /usr/lib/oracle/18.3/client64/lib/network/admin
+
+<span class="c1"># copy tnsnames.ora from Mac host</span>
+sudo scp <span class="s1">&#39;username&#39;</span>@<span class="s1">&#39;machost&#39;</span>:/opt/oracle/instantclient_12_2/network/admin/tnsnames.ora /usr/lib/oracle/18.3/client64/lib/network/admin
+</code></pre></div>
+
+<p>Good luck :)</p>
 
                                         
                                     </section>
