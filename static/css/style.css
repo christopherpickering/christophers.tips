@@ -3203,14 +3203,15 @@ table {
 
 .book-header h2 {
     margin: 0;
+    text-align: center !important;
     line-height: 50px;
     opacity: 0;
     -webkit-transition: opacity ease .4s;
     -moz-transition: opacity ease .4s;
     -o-transition: opacity ease .4s;
     transition: opacity ease .4s;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 200px !important;
+    padding-right: 200px !important;
     -webkit-transition: opacity .2s ease;
     -moz-transition: opacity .2s ease;
     -o-transition: opacity .2s ease;
