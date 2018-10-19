@@ -3408,7 +3408,8 @@ table {
     padding: 10px 15px;
     padding-top: 20px;
     text-transform: uppercase;
-    color: #ed5740
+    color: #ed5740;
+    font-family: "alternate-gothic-no-2-d",sans-serif !important;
 }
 
 .book-summary ul.summary li.divider {
@@ -3449,8 +3450,10 @@ table {
 }
 
 ul.summary li.chapter {
-padding: 0px 45px;
-color:#494949;
+    padding: 0px 45px;
+    color:#494949;
+    font-family: "adobe-caslon-pro", serif;
+
 }
 
 .book-summary ul.summary li a:hover {
