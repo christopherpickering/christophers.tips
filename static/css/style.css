@@ -3172,7 +3172,8 @@ table {
     z-index: 2;
     /*font-size: .85em;*/
     color: #7e888b;
-    background: 0 0
+    background: 0 0;
+    text-align:center !important;
 }
 
 .book-header .btn {
@@ -3202,8 +3203,6 @@ table {
 
 .book-header h2 {
     margin: 0;
-   /* font-size: 20px;*/
-    text-align: center;
     line-height: 50px;
     opacity: 0;
     -webkit-transition: opacity ease .4s;
