@@ -30,7 +30,7 @@ body, html {
 
 html {
     font-family: "adobe-caslon-pro", serif;
-    font-size: 1.3em ;
+    font-size: 1.1em ;
     color:#494949;
     text-align: justify;
 }
@@ -69,6 +69,8 @@ h1 {
     font-weight: 400 !important;
     color: #4EB7D9 !important;
     font-size: 3.5em !important;
+    margin-top: .75em;
+    margin-bottom: .4em;
 }
 
 h2 {
@@ -4030,41 +4032,7 @@ padding: 0px 45px;
     clear: both
 }
 
-#book-search-results .search-results .has-results .search-results-item h1,
-#book-search-results .search-results .has-results .search-results-item h2,
-#book-search-results .search-results .has-results .search-results-item h3,
-#book-search-results .search-results .has-results .search-results-item h4,
-#book-search-results .search-results .has-results .search-results-item h5,
-#book-search-results .search-results .has-results .search-results-item h6 {
-    margin-top: 1.275em;
-    margin-bottom: .85em;
-    font-weight: 700
-}
 
-#book-search-results .search-results .has-results .search-results-item h1 {
-    font-size: 2em
-}
-
-#book-search-results .search-results .has-results .search-results-item h2 {
-    font-size: 1.75em
-}
-
-#book-search-results .search-results .has-results .search-results-item h3 {
-    font-size: 1.5em
-}
-
-#book-search-results .search-results .has-results .search-results-item h4 {
-    font-size: 1.25em
-}
-
-#book-search-results .search-results .has-results .search-results-item h5 {
-    font-size: 1em
-}
-
-#book-search-results .search-results .has-results .search-results-item h6 {
-    font-size: 1em;
-    color: #777
-}
 
 #book-search-results .search-results .has-results .search-results-item code,
 #book-search-results .search-results .has-results .search-results-item pre {
