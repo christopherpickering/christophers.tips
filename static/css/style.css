@@ -58,6 +58,7 @@ h4 {
     line-height: 1 !important;
     word-break: break-word !important;
     overflow-wrap: break-word !important;
+    text-align: left;
 }
 
 h1 {
