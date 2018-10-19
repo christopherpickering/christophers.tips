@@ -59,6 +59,7 @@ h4 {
     word-break: break-word !important;
     overflow-wrap: break-word !important;
     text-align: left;
+
 }
 
 h1 {
@@ -82,10 +83,14 @@ h2 {
 }
 
 h3 {
-    text-transform: uppercase !important;
-    font-weight: 300 !important;
-    font-size: 4em !important;
-    color: #4EB7D9 !important;
+    color: #494949 !important;
+    font-size: 1em !important;
+    font-weight:bold !important;
+    text-align: justify !important;
+    margin: 0 !important;
+    letter-spacing:1px !important;
+    line-height:110% !important;
+    padding-bottom: 5px !important;
 }
 
 h4 {
@@ -113,7 +118,7 @@ h5 {
     margin-top:1.5em !important;
 }
 
-h1, h3 {
+h1 {
     font-family: "alternate-gothic-no-2-d",sans-serif !important;
 }
 
