@@ -3408,7 +3408,7 @@ table {
     padding: 10px 15px;
     padding-top: 20px;
     text-transform: uppercase;
-    color: #939da3
+    color: #ed5740
 }
 
 .book-summary ul.summary li.divider {
@@ -3450,6 +3450,7 @@ table {
 
 ul.summary li.chapter {
 padding: 0px 45px;
+color:#494949;
 }
 
 .book-summary ul.summary li a:hover {
