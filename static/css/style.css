@@ -78,8 +78,9 @@ h2 {
     text-align: justify !important;
     margin: 0 !important;
     letter-spacing:1px !important;
-    line-height:110% !important;
-    padding-bottom: 5px !important;
+    line-height:130% !important;
+    padding-bottom: 25px !important;
+    padding-top: 15px;
 }
 
 h3 {
@@ -88,9 +89,9 @@ h3 {
     font-weight:bold !important;
     text-align: justify !important;
     margin: 0 !important;
-    letter-spacing:1px !important;
-    line-height:110% !important;
-    padding-bottom: 5px !important;
+    letter-spacing:1.2px !important;
+    line-height:130% !important;
+    padding-bottom: 10px !important;
 }
 
 h4 {
