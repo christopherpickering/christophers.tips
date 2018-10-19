@@ -73,7 +73,7 @@ h1 {
 
 h2 {
     color: #494949 !important;
-    font-size: 1.8em !important;
+    font-size: 1.7em !important;
     font-weight:bold !important;
     text-align: justify !important;
     margin: 0 !important;
@@ -3707,37 +3707,6 @@ padding: 0px 45px;
     clear: both
 }
 
-.markdown-section h1, .markdown-section h2, .markdown-section h3,
-.markdown-section h4, .markdown-section h5, .markdown-section h6 {
-    margin-top: 1.275em;
-    margin-bottom: .85em;
-    font-weight: 700
-}
-
-.markdown-section h1 {
-    font-size: 2em
-}
-
-.markdown-section h2 {
-    font-size: 1.75em
-}
-
-.markdown-section h3 {
-    font-size: 1.5em
-}
-
-.markdown-section h4 {
-    font-size: 1.25em
-}
-
-.markdown-section h5 {
-    font-size: 1em
-}
-
-.markdown-section h6 {
-    font-size: 1em;
-    color: #777
-}
 
 .markdown-section code, .markdown-section pre {
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
