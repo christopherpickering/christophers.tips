@@ -13,7 +13,7 @@ def build_page(page,path):
     page_update_date = datetime.fromtimestamp(page.stat().st_mtime).strftime('%B %d,%Y %H:%M').lstrip("0").replace(" 0", " ")
 
     with open(page,encoding="utf-8") as f:
-        contents = markdown2.markdown(f.read(), extras=["fenced-code-blocks","footnotes"])
+        contents = markdown2.markdown(f.read(), extras=["fenced-code-blocks"])
 
     my_page = PurePosixPath(Path(page)).stem
     myfname = path.joinpath(my_page).with_suffix('.html')
