@@ -9,10 +9,8 @@ Download Ubuntu server ISO. https://www.ubuntu.com/download/server
 
 Create a new virtual machine in virtualbox. On the initial startup select the ubuntu ISO.
 
-Don't forget to save the username and password for your nex machine, they come in handy. If you forget the pass you can [reset it].
+Don't forget to save the username and password for your nex machine, they come in handy. If you forget the pass you can [reset it](https://askubuntu.com/questions/24006/how-do-i-reset-a-lost-administrative-password).
 
-[reset it]:<https://askubuntu.com/questions/24006/how-do-i-reset-a-lost-administrative-password>
-[I'm an inline-style link](https://www.google.com)
 Make sure the network connection to the new machine is bridged. Restart the VM. 
 
 ```sh
@@ -121,9 +119,7 @@ sudo apt install python-mysqldb
 
 ### Setup MySQL
 
-[MySQL Docs]
-
-[MySQL Docs]:<https://dev.mysql.com/doc/mysql-getting-started/en/>
+[MySQL Docs](https://dev.mysql.com/doc/mysql-getting-started/en/)
 
 Turn on MySQL and change settings so that is will auto start on reboot.
 
@@ -168,9 +164,7 @@ deactivate
 
 ### Setup ufw
 
-[ufw Docs]
-
-[ufw Docs]:<https://help.ubuntu.com/community/UFW>
+[ufw Docs](https://help.ubuntu.com/community/UFW)
 
 First install the package
 
@@ -192,9 +186,7 @@ sudo ufw allow 8800
 
 ### Setup Gunicorn
 
-[Gunicorn Docs]
-
-[Gunicorn Docs]:<http://docs.gunicorn.org/en/stable/settings.html>
+[Gunicorn Docs](http://docs.gunicorn.org/en/stable/settings.html)
 
 Gunicorn is a python package and installed through the pip virtual environment.
 
@@ -240,9 +232,7 @@ journalctl -u gunicorn
 
 ## Setup NGINX
 
-[NGINX Docs]
-
-[NGINX Docs]:<http://nginx.org/en/docs/>
+[NGINX Docs](http://nginx.org/en/docs/)
 
 Install NGINX
 ```sh

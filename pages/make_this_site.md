@@ -98,7 +98,7 @@ sudo chmod 700 pull.bash
 
 ## Register a Domain With Google
 
-Navigate to [domains.google.com] and register a domain. Got to the DNS tab and add in the CNAME information.
+Navigate to [domains.google.com](domains.google.com) and register a domain. Got to the DNS tab and add in the CNAME information.
 
 ![CNAME](/img/make_this_site-CNAME.png)
 
@@ -137,7 +137,6 @@ Nice! You will be able to see you site now at mysite.com!
 
 
 [Gitbook Documentation]: <https://toolchain.gitbook.com>
-[domains.google.com]:<domains.google.com>
 [default theme]:<https://github.com/GitbookIO/theme-default/tree/master/_layouts>
 [example theme 1]:<https://github.com/antonlegoo/gitbook-plugin-theme-gestalt>
 [example theme 2]:<https://github.com/GitbookIO/theme-api>
