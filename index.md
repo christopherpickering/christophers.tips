@@ -10,7 +10,7 @@ When other time is available I chip in at [Dayspring Bibles](www.dayspringbibles
 
 ## This Site
 
-This is a static html site built with markdown and compiled with python. You can learn how to make it [here](/make_this_site.html). I've found that most of the time used on projects is spent finding a simple problem. The purpose of this site is to save the little solutions for next time :)
+This is a static html site built with markdown and compiled with python. You can learn how to make it [here](/pages/make_this_site.html). I've found that most of the time used on projects is spent finding a simple problem. The purpose of this site is to save the little solutions for next time :)
 
 **Thanks for visiting.**
 
