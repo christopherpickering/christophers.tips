@@ -100,7 +100,7 @@ sudo chmod 700 pull.bash
 
 Navigate to [domains.google.com](domains.google.com) and register a domain. Got to the DNS tab and add in the CNAME information.
 
-![CNAME](/img/make_this_site-CNAME.png)
+![CNAME](/static/img/make_this_site-CNAME.png)
 
 ## Add CNAME Records to your project
 
