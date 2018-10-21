@@ -1,5 +1,5 @@
 <ul class="summary">
-    <li class="header" style="text-align: center;"><a href="/test-site/">Christophers Tips</a></li>
+    <li class="header" style="text-align: center;"><a href="/">Christophers Tips</a></li>
     <li class="divider"></li>
     {% for group in navigation %}
         {% if group == 'devider' %}
@@ -8,7 +8,7 @@
             <li class="header">{{ group }}</li>
             {% for page in navigation[group] %}
                 <li class="chapter">
-                    <a href="/test-site/pages/{{ navigation[group][page] }}.html">{{ page }}</a>
+                    <a href="/pages/{{ navigation[group][page] }}.html">{{ page }}</a>
                 </li>
                 
             {% endfor %}
