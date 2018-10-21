@@ -12,7 +12,7 @@
 }
 
 .book-summary ul.summary li a, .book-summary ul.summary li span {
-    padding: 10px 45px;
+    padding: 10px 40px;
 }
 
 body, html {
@@ -3436,11 +3436,12 @@ table {
 }
 
 ul.summary li.chapter {
-    padding: 0px 45px;
+    padding: 0px 40px;
     color:#494949;
     font-family: "adobe-caslon-pro", serif;
-    font-size: 1em !important;
+    font-size: 1.4em !important;
     letter-spacing: 1.2px !important;
+    font-weight: bold !important;
 }
 
 .book-summary ul.summary li a:hover {
