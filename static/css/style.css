@@ -19,6 +19,10 @@ body, html {
     height: 100%
 }
 
+.pull-left {
+    float:left;
+}
+
 html {
     font-family: "adobe-caslon-pro", serif;
     font-size: 1.1em ;
