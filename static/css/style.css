@@ -32,6 +32,11 @@ body {
     text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
+
+}
+
+* {
+    -webkit-overflow-scrolling: touch;
 }
 
 h1,span,b,i{
@@ -3366,7 +3371,7 @@ table {
     z-index: 1;
     overflow-y: auto;
     width: 300px;
-    color: #364149;
+    color: #494949;
     background: #fafafa;
     border-right: 1px solid rgba(0, 0, 0, .07);
     -webkit-transition: left 250ms ease;
@@ -3415,7 +3420,7 @@ table {
 }
 
 .book-summary ul.summary li.done > a {
-    color: #364149;
+    color: #494949;
     font-weight: 400
 }
 
@@ -3427,7 +3432,7 @@ table {
     display: block;
     padding: 10px 15px;
     border-bottom: none;
-    color: #364149;
+    color: #494949;
     background: 0 0;
     text-overflow: ellipsis;
     overflow: hidden;
