@@ -131,8 +131,11 @@ Push to remote
 
 ```bash
 git push origin <branch name>
-Removing files that are in .gitignore
+# if you need to force the update..
+git push origin <branch name> --force
 ```
+
+## Removing files that are in .gitignore
 
 To see files that are not excluded by .gitignore
 
