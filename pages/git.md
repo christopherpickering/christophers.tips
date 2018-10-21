@@ -126,6 +126,9 @@ If you want to change remote or had a spelling mistake (opps)
 ```bash
 git remote rm origin
 git remote add origin https://github.com/username/project_name.git
+
+# to see what the remote is... incase you forgot :)
+git remote -v
 ```
 Push to remote
 
