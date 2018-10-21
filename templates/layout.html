@@ -5,16 +5,15 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-
+        <!-- site properties -->
         <title>{% if title %}{{ title }}{% else %}Christophers Tips{% endif %}</title>
         <meta name="description" content="{% block description %}{% endblock %}">
         <meta name="author" content="{{ author }}">
         <meta name="keywords" content="{{ keywords }}">
-
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <!-- typekit -->
         <link rel="stylesheet" href="https://use.typekit.net/wtg5gdq.css">
@@ -24,7 +23,6 @@
         <link rel="stylesheet" href="/static/css/highlight.css">
         {% block includes %}{% endblock %}  
         
-
         <!-- fontawesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
@@ -32,10 +30,7 @@
     <body>
 
         {% block body %}{% endblock %}
-        <!--<script src="../static/js/gitbook.js"></script>-->
-        <!--<script src="../static/js/jquery.js"></script>-->
-        {% for j in js %}<!--<script src="../{{ j }}"></script>-->{% endfor %}
-        {% block javascript %}{% endblock %}
+
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>     
         <script src="/static/js/my.js"></script>
