@@ -406,7 +406,7 @@ grep cron /var/log/syslog
 
 ```
 
-Other option:
+Other option for old versions of ubunut:
 
 ```sh
 touch /etc/init/converter.conf
@@ -418,7 +418,5 @@ description "converter"
 start on startup
 task
 exec path/to/converter.sh
-
-
-
+```
 
