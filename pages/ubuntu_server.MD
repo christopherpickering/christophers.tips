@@ -367,9 +367,9 @@ do
 
     if [[ $f = *.doc* ]]; then
         # convert the file to pdf
-        soffice --convert-to pdf $DIR/$f --headless
+        soffice --headless --convert-to pdf --outdir $DIR "$DIR/$f"
         # delete the doc
-        rm $DIR/$f &
+        rm "$DIR/$f" &
     fi
 done
 ```
@@ -389,9 +389,35 @@ Finally, the script needs to be added to the startup stuff to auto run when the 
 sudo crontab -e
 
 # add this
-@reboot /path/to/converter.sh
+@reboot /path/to/converter.sh > path/to/converter/log.txt 2> path/to/converter/error.txt
+
+
+# turn on cron logging for debuging. Remove the # before cron.*
+sudo nano /etc/rsyslog.d/50-default.conf
+
+# restart rsyslog and cron
+sudo service rsyslog restart
+service cron restart
+
+# view log
+more /var/log/cron.log
+# or 
+grep cron /var/log/syslog
+
 ```
 
+Other option:
+
+```sh
+touch /etc/init/converter.conf
+nano /etc/init/converter.conf
+
+# add this text
+
+description "converter"
+start on startup
+task
+exec path/to/converter.sh
 
 
 
