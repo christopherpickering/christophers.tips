@@ -388,7 +388,7 @@ Finally, the script needs to be added to the startup stuff to auto run when the 
 # open task manager as root
 sudo crontab -e
 
-# add this
+# add this to the file.
 @reboot /path/to/converter.sh > path/to/converter/log.txt 2> path/to/converter/error.txt
 
 
