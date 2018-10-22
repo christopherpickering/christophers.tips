@@ -31,9 +31,12 @@ website_root = base_dir / 'website'
 pages_root = base_dir / 'pages'
 
 # for testing. pushes to different git repo
-if sys.argv[1] == 'test':
-    website_root = base_dir / 'test_site'
-
+try:
+    if sys.argv[1] == 'test':
+        website_root = base_dir / 'test_site'
+except:
+    pass
+    
 # set templates
 templates = jinja2.Environment(
     loader=jinja2.FileSystemLoader(
