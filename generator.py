@@ -6,7 +6,7 @@ from pathlib import Path, PurePosixPath
 import shutil
 import markdown2
 from datetime import datetime
-
+import sys
 
 def build_page(page,path):
     
@@ -30,11 +30,19 @@ template_root = base_dir / 'templates'
 website_root = base_dir / 'website'
 pages_root = base_dir / 'pages'
 
+# for testing. pushes to different git repo
+if sys.argv[1] == 'test':
+    website_root = base_dir / 'test_site'
+
 # set templates
 templates = jinja2.Environment(
     loader=jinja2.FileSystemLoader(
     os.path.join(template_root))
 )
+
+# create website directory if not existing
+if not os.path.exists(website_root):
+    os.makedirs(website_root)
 
 # remove old build folders
 shutil.rmtree(website_root / 'pages',ignore_errors=True)
