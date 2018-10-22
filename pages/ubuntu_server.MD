@@ -324,4 +324,60 @@ sudo service nginx reload # or restart
 sudo service gunicorn reload # or restart
 ```
 
+## Setup LibreOffice for File Conversion
+
+Whenever a .doc* is added to the /static/drawings folder I want it to convert to a pdf. There are two tools to do this job - LibreOffice and Inotifiy.
+
+Inotify will watch the folder, and Libreoffice is used for headless conversion of .doc* to pdf. First install LibreOffice & Inotify.
+
+### Install Tools
+
+```sh
+sudo apt install libreoffice
+sudo apt install inotify-tools
+sudo apt install libreoffice-java-common
+sudo apt install default-jre
+```
+
+### Create Converter Script
+
+The scrip will watch the directory we save it in, when a file is added it will run a LibreOffice command to convert to pdf. Watch out, spaces when setting variables cause an issue.
+
+```sh
+touch converter.sh
+# make the script runable
+sudo chmod 777 converter.sh
+nano converter.sh
+```
+
+Add the following contents to the file and save. Try adding a doc to the directory to test.
+
+```sh
+#!/bin/bash
+
+# set path to watch - in this case current directory.
+DIR=$PWD
+
+# watch for any changes
+inotifywait -m -r -e moved_to -e create "$DIR" --format "%f" | while read f
+
+do
+    # print file name
+    echo $f
+
+    if [[ $f = *.doc* ]]; then
+        # convert the file to pdf
+        soffice --convert-to pdf $DIR/$f --headless
+        # delete the doc
+        rm $DIR/$f &
+    fi
+done
+```
+
+### Make the Script AutoStart on Reboot
+
+
+
+
+
 
