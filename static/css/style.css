@@ -523,12 +523,12 @@ ul.summary li.chapter {
 }
 
 .book.with-summary .book-summary {
-    left: 0
+    left:-300px: 
 }
 
 @media(min-width:900px){
    .book.with-summary .book-summary {
-        left: 300px;
+        left: 0px;
     }    
 }
 
