@@ -1,60 +1,39 @@
 {% extends "./layout.html" %}
 
-{% block head %}
-    {{ super() }}
-    {% if next and path %}
-        <link rel="next" href="{{ path }}" />
-    {% endif %}
-    {% if previous and path %}
-        <link rel="prev" href="{{ path }}" />
-    {% endif %}
-{% endblock %}
-
 {% block body %}
     <div class="book with-summary">
         <div class="book-summary">
-            {% block book_sidebar %}
-                {% block search_input %}{% endblock %}
-                {% block book_summary %}
-                    <nav role="navigation">
-                        {% include "summary.html" %}
-                    </nav>
-                {% endblock %}
-            {% endblock %}
+            <nav role="navigation">
+                {% include "summary.html" %}
+            </nav>
         </div>
         <div class="book-body">
-            {% block book_body %}
-                <div class="body-inner">
-                    {% block book_inner %}
-                        {% include "header.html" %}
-                        <div class="page-wrapper" tabindex="-1" role="main">
-                            <div class="page-inner">
-                                {% block search_results %}
-                                    <section class="normal markdown-section">
-                                        {% block page %}
-                                            {{ content }}
-                                        {% endblock %}
-                                    </section>
-                                {% endblock %}
-                            </div>
-                        </div>
-                        
-                    {% endblock %}
+            <div class="body-inner">
+                <div class="book-header" role="navigation">
+                    <a class="btn pull-left js-toolbar-action" aria-label="" href="#"><i class="fa fa-align-justify"></i></a>
+                    
+                    <!-- Title -->
+                    <h2><a href="/" >{{ title }}</a></h2>
                 </div>
-                {% block book_navigation %}
-                    {% if previous and path %}
-                        <a href="{{ path }}{{ anchor }}" class="navigation navigation-prev {% if not (next and path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ title }}">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                {% endif %}
-                {% if next and path %}
-                    <a href="{{ path }}{{ anchor }}" class="navigation navigation-next {% if not (previous and path) %}navigation-unique{% endif %}" aria-label="Next page: {{ title }}">
+                <div class="page-wrapper" tabindex="-1" role="main">
+                    <div class="page-inner">
+                        <section class="normal markdown-section">
+                            {{ content }}
+                        </section>
+                    </div>
+                </div>                     
+            </div>
+
+            {% if previous and path %}
+                <a href="{{ path }}{{ anchor }}" class="navigation navigation-prev {% if not (next and path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ title }}">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            {% endif %}
+            {% if next and path %}
+                <a href="{{ path }}{{ anchor }}" class="navigation navigation-next {% if not (previous and path) %}navigation-unique{% endif %}" aria-label="Next page: {{ title }}">
                     <i class="fa fa-angle-right"></i>
                 </a>
             {% endif %}
-        {% endblock %}
-    {% endblock %}
-</div>
-
-</div>
+        </div>
+    </div>
 {% endblock %}
