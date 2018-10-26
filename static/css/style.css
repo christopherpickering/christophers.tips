@@ -65,7 +65,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 400;
     color: #4EB7D9;
-    font-size: 3.5em;
+    font-size: 3.5em !important;
     margin-top: .75em;
     margin-bottom: .4em;
     font-family: "alternate-gothic-no-2-d",sans-serif;
