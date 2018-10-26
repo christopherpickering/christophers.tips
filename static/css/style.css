@@ -536,7 +536,7 @@ ul.summary li.chapter {
 
 @media (min-width:600px) {
     .book.with-summary .book-body {
-        left: 300px
+        /*left: 300px*/
     }
 }
 
