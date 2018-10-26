@@ -514,7 +514,6 @@ ul.summary li.chapter {
     padding-left: 20px
 }
 
-/* set with of book-summary on small screen */
 @media (max-width:600px) {
     .book-summary {
         width: calc(100% - 60px);
@@ -524,7 +523,7 @@ ul.summary li.chapter {
 }
 
 .book.with-summary .book-summary {
-    left:0: 
+    left: 0
 }
 
 
@@ -534,13 +533,13 @@ ul.summary li.chapter {
     height: 100%
 }
 
-@media (min-width:900px) {
+@media (min-width:600px) {
     .book.with-summary .book-body {
-        left: 300px;
+        left: 300px
     }
 }
 
-@media (max-width:900px) {
+@media (max-width:600px) {
     .book.with-summary {
         overflow: hidden
     }
@@ -553,6 +552,7 @@ ul.summary li.chapter {
         transform: translate(calc(100% - 60px), 0)
     }
 }
+
 
 
 .book-body {
