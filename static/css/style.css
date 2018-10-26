@@ -516,6 +516,13 @@ ul.summary li.chapter {
     padding-left: 20px
 }
 
+@media (max-width:600px) {
+    .book-summary {
+        width: calc(100% - 60px);
+        bottom: 0;
+        left: -100%
+    }
+}
 
 .book.with-summary .book-summary {
     left: 0
