@@ -19,7 +19,7 @@ $('body').on('click', '.js-toolbar-action', function(event) {
         $img = $('.book');
 
     function resize() {
-        if ($window.width() < 600) {
+        if ($window.width() > 1200) {
             return $img.addClass('with-summary');
         }
 
