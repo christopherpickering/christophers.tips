@@ -16,7 +16,7 @@ $('body').on('click', '.js-toolbar-action', function(event) {
 
 (function($) {
     var $window = $(window),
-        var $img = $('.book');
+        $img = $('.book');
 
     function resize() {
         if ($window.width() < 600) {
