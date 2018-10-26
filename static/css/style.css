@@ -526,17 +526,10 @@ ul.summary li.chapter {
     left: 0
 }
 
-@media(min-width:9900px){
+@media(min-width:900px){
    .book.with-summary .book-summary {
         left: 300px;
     }    
-}
-
-.book.without-animation .book-summary {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important
 }
 
 .book {
@@ -565,12 +558,6 @@ ul.summary li.chapter {
     }
 }
 
-.book.without-animation .book-body {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important
-}
 
 .book-body {
     position: absolute;
