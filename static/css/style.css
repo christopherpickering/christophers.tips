@@ -524,14 +524,9 @@ ul.summary li.chapter {
 }
 
 .book.with-summary .book-summary {
-    left:-300px: 
+    left:0: 
 }
 
-@media(min-width:900px){
-   .book.with-summary .book-summary {
-        left: 0px;
-    }    
-}
 
 .book {
     position: relative;
