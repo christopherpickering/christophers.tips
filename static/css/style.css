@@ -409,6 +409,7 @@ table {
     display: none
 }
 
+
 .book-summary {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
@@ -425,6 +426,12 @@ table {
     -moz-transition: left 250ms ease;
     -o-transition: left 250ms ease;
     transition: left 250ms ease
+}
+
+@media (max-width:600px) {
+    .book-summary {       
+        left: 0;
+    }
 }
 
 .book-summary ul.summary {
@@ -526,7 +533,6 @@ ul.summary li.chapter {
     left: 0
 }
 
-
 .book {
     position: relative;
     width: 100%;
@@ -552,8 +558,6 @@ ul.summary li.chapter {
         transform: translate(calc(100% - 60px), 0)
     }
 }
-
-
 
 .book-body {
     position: absolute;
