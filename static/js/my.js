@@ -12,3 +12,21 @@ $('body').on('click', '.js-toolbar-action', function(event) {
     });
 
 });
+
+
+(function($) {
+    var $window = $(window),
+        var $img = $('.book');
+
+    function resize() {
+        if ($window.width() < 600) {
+            return $img.addClass('with-summary');
+        }
+
+        $img.removeClass('with-summary');
+    }
+
+    $window
+        .resize(resize)
+        .trigger('resize');
+})(jQuery);
