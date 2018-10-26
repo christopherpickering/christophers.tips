@@ -367,14 +367,12 @@ table {
     margin: 0 50px;
     padding:10px 0 0 0;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
     opacity: 0;
     -webkit-transition: opacity ease .4s;
     -moz-transition: opacity ease .4s;
     -o-transition: opacity ease .4s;
     transition: opacity ease .4s;
-    padding-left: 200px !important;
-    padding-right: 200px !important;
     -webkit-transition: opacity .2s ease;
     -moz-transition: opacity .2s ease;
     -o-transition: opacity .2s ease;
@@ -526,6 +524,12 @@ ul.summary li.chapter {
 
 .book.with-summary .book-summary {
     left: 0
+}
+
+@media(min-width:9900px){
+   .book.with-summary .book-summary {
+        left: 300px;
+    }    
 }
 
 .book.without-animation .book-summary {
