@@ -516,13 +516,7 @@ ul.summary li.chapter {
     padding-left: 20px
 }
 
-@media (max-width:600px) {
-    .book-summary {
-        width: calc(100% - 60px);
-        bottom: 0;
-        left: -100%
-    }
-}
+
 
 .book.with-summary .book-summary {
     left: 0
@@ -534,6 +528,25 @@ ul.summary li.chapter {
     height: 100%
 }
 
+@media (min-width:600px) {
+    .book.with-summary .book-body {
+        left: 300px
+    }
+}
+
+@media (max-width:600px) {
+    .book.with-summary {
+        overflow: hidden
+    }
+
+    .book.with-summary .book-body {
+        -webkit-transform: translate(calc(100% - 60px), 0);
+        -moz-transform: translate(calc(100% - 60px), 0);
+        -ms-transform: translate(calc(100% - 60px), 0);
+        -o-transform: translate(calc(100% - 60px), 0);
+        transform: translate(calc(100% - 60px), 0)
+    }
+}
 
 .book-body {
     position: absolute;
