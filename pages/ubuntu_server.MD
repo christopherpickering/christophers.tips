@@ -202,7 +202,7 @@ Create gunicorn service information.
 sudo nano /etc/systemd/system/gunicorn.service
 ```
 
-Type in the following.
+Type in the following. The timeout section is optional, only if you have very long running requests like I do. If you do the timeout, makesure you do the same in nginx!
 
 ```sh
 [Unit]
@@ -213,7 +213,7 @@ After=network.target
 User=username
 Group=www-data
 WorkingDirectory=/home/path/to/project/
-ExecStart=/home/path/to/project/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/path/to/project/project.sock PROJECT.wsgi:application
+ExecStart=/home/path/to/project/env/bin/gunicorn --access-logfile - --workers 3 --timeout 999 --bind unix:/home/path/to/project/project.sock PROJECT.wsgi:application
    
 [Install]
 WantedBy=multi-user.target
@@ -226,8 +226,11 @@ sudo systemctl enable gunicorn.service
 sudo systemctl start gunicorn.service
 sudo systemctl status gunicorn.service
 ​
-# check any errors with
+# check any errors with (full log)
 journalctl -u gunicorn
+
+# get last 30 lines
+journalctl -u gunicorn | tail -n 30
 ```
 
 ## Setup NGINX
@@ -270,6 +273,20 @@ server {
         proxy_pass http://unix:/home/path/to/project/project.sock;
     }
 }
+```
+
+If you created a longer timeout with gunicorn you will also need to do it with nginx.
+
+```sh
+# open nginx config
+sudo nano /etc/nginx/nginx.conf
+
+# add these in the http secion. all for good luck...
+fastcgi_connect_timeout 999s;
+fastcgi_connect_timeout 999s;
+fastcgi_connect_timeout 999s;
+proxy_connect_timeout 999s;
+proxy_read_timeout 999s;
 ```
 
 Enable site with NGINX and text it.
