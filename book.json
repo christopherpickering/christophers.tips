@@ -17,7 +17,8 @@
 
         "MISC":{
             "Make this Site":"make_this_site",
-            "Git":"git"
+            "Git":"git",
+            "Mac Setup":"setup_a_mac"
         },
         "Web Development":{
             "Django on Mac":"Mac_Django_Setup",
