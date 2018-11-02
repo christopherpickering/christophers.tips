@@ -75,7 +75,7 @@ nano ~/.bash_profile
 alias act="source venv/bin/activate"
 alias dact="deactivate"
 alias ip="ifconfig | grep 'inet '"
-alias gc="git add . git commit -m"
+alias gc="git add . && git commit -m "
 # save
 # restart terminal or reload
 source ~/.bash_profile
