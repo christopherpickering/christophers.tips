@@ -104,7 +104,7 @@ Go to http://127.0.0.1:8000/ to see code in action.
 Get mysql from Brew
 
 ```sh
-brew install msyql
+brew install mysql
 ```
 
 Install the components for python.
