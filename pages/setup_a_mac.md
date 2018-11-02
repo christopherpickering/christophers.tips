@@ -60,3 +60,23 @@ EBS Forms needs to be allowed as a safe site in Java.
 
 ### First Use
 On the first use when logging in in Firefox click "activate java" when prompted, and then allow popups when prompted.
+
+## Terminal Alias
+
+If you are typing the same phrase in terminal over and over and over it may be handy to create an alias name..
+
+```sh
+# edit bash profile
+nano ~/.bash_profile
+
+# add in the alias
+
+# Aliases - remember no spaces at equals sign
+alias act="source venv/bin/activate"
+alias dact="deactivate"
+alias ip="ifconfig | grep 'inet '"
+alias gc="git add . git commit -m"
+# save
+# restart terminal or reload
+source ~/.bash_profile
+```
