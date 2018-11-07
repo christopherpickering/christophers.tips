@@ -112,6 +112,11 @@ Install the components for python.
 ```sh
 source venv/bin/activate
 pip install mysqlclient
+
+# if you run into errors, you may need to relink openssl in brew.
+brew reinstall openssl
+brew link --force openssl
+# copy and past instructions to terminal and run.
 ```
 
 Turn on mysql with brew

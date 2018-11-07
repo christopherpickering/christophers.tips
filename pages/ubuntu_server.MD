@@ -12,6 +12,7 @@ Create a new virtual machine in virtualbox. On the initial startup select the ub
 Don't forget to save the username and password for your nex machine, they come in handy. If you forget the pass you can [reset it](https://askubuntu.com/questions/24006/how-do-i-reset-a-lost-administrative-password).
 
 Make sure the network connection to the new machine is bridged. Restart the VM. 
+If you are using a vpn on the host than NAT connection will work.
 
 ```sh
 $ sudo reboot

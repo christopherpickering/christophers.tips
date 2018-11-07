@@ -80,3 +80,16 @@ alias gc="git add . && git commit -m "
 # restart terminal or reload
 source ~/.bash_profile
 ```
+
+## UTF-8 Error when running python 3scripts from terminal, or through venv in Sublime
+
+Edit your bash profiel to include these two lines -
+
+```sh
+# edit file
+nano ~/.bash_profile
+
+# add these lines and save.
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
