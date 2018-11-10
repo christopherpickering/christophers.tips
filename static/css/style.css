@@ -1,5 +1,29 @@
+
+:root {
+/* font sizes */
+ --small-font:1em;
+ --regular-font:1.1em;
+ --medium-font:1.5em;
+ --large-font:1.7em;
+ --xlarge-font:2.2em;
+ --xxlarge-font:3.5em ;
+
+var(--regular-font-color)
+
+ /* colors */
+ --regular-font-color:  #494949;
+ --heading-color: #4EB7D9;
+ --title-color: #333;
+ --section-heading-color: #ed5740;
+ --background-color: #fff;
+ --book-header: #7e888b;
+ --button-color: #ccc;
+ --sidebar-background-color:#fafafa;
+ --section-divider-color: #e7e7e7;
+}
+
 .book-summary ul.summary li.header {
-    color: #333;
+    color:  var(--title-color);
     font-weight: 500;
 }
 
@@ -18,7 +42,7 @@ body, html {
 html {
     font-family: "adobe-caslon-pro", serif;
     font-size: 1.1em ;
-    color:#494949;
+    color: var(--regular-font-color);
     text-align: justify;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
@@ -64,7 +88,7 @@ h4 {
 h1 {
     text-transform: uppercase;
     font-weight: 400;
-    color: #4EB7D9;
+    color:  var(--heading-color);
     font-size: 3.5em !important;
     margin-top: .75em;
     margin-bottom: .4em;
@@ -72,7 +96,7 @@ h1 {
 }
 
 h2 {
-    color: #494949;
+    color:  var(--regular-font-color);
     font-size: 1.7em;
     font-weight:bold;
     text-align: justify;
@@ -84,7 +108,7 @@ h2 {
 }
 
 h3 {
-    color: #494949;
+    color:  var(--regular-font-color);
     font-size: 1em;
     font-weight:bold;
     text-align: justify;
@@ -95,7 +119,7 @@ h3 {
 }
 
 h4 {
-    color: #494949;
+    color:  var(--regular-font-color);
     font-size: 1.5em;
     line-height:120%;
     letter-spacing:1px;
@@ -103,7 +127,7 @@ h4 {
 }
 
 h6 {
-    color: #494949;
+    color:  var(--regular-font-color);
     font-size: 1.5em;
     line-height:120%;
     letter-spacing:1px;
@@ -113,7 +137,7 @@ h5 {
     font-size: 2.2em;
     line-height:120%;
     font-weight: 100;
-    color: #494949;
+    color:  var(--regular-font-color);
     /*margin-left:16%;
     margin-right:16%;*/
     margin-top:1.5em;
@@ -141,7 +165,7 @@ audio:not([controls]) {
 
 body {
     margin: 0;
-    background-color:#fff;
+    background-color: var(--background-color);
 }
 
 a:focus {
@@ -298,45 +322,13 @@ table {
     display: none
 }
 
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    color: #444;
-    background: #eee;
-    border-bottom: 5px solid #ddd
-}
-
-.alert-success {
-    background: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d
-}
-
-.alert-info {
-    background: #d9edf7;
-    border-color: #bce8f1;
-    color: #31708f
-}
-
-.alert-danger {
-    background: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442
-}
-
-.alert-warning {
-    background: #fcf8e3;
-    border-color: #faebcc;
-    color: #8a6d3b
-}
-
 
 .book-header {
     overflow: visible;
     height: 50px;
     padding: 0px;
     z-index: 2;
-    color: #7e888b;
+    color:  var(--book-header);
     background: 0 0;
 }
 
@@ -345,7 +337,7 @@ table {
     height: 50px;
     padding: 0 17px;
     border-bottom: none;
-    color: #ccc;
+    color: var(--button-color);
     line-height: 50px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -355,7 +347,7 @@ table {
 .book-header .btn:hover {
     position: relative;
     text-decoration: none;
-    color: #494949;
+    color:  var(--regular-font-color);
     background: 0 0
 }
 
@@ -419,8 +411,8 @@ table {
     z-index: 1;
     overflow-y: auto;
     width: 300px;
-    color: #494949;
-    background: #fafafa;
+    color:  var(--regular-font-color);
+    background: var(--sidebar-background-color);
     border-right: 1px solid rgba(0, 0, 0, .07);
     -webkit-transition: left 250ms ease;
     -moz-transition: left 250ms ease;
@@ -447,7 +439,7 @@ table {
 .book-summary ul.summary li.header {
     padding: 10px 15px;
     text-transform: uppercase;
-    color: #ed5740;
+    color:  var(--section-heading-color);
     font-family: "alternate-gothic-no-2-d",sans-serif !important;
     font-size:1.4em;
 }
@@ -464,29 +456,11 @@ table {
     background: rgba(0, 0, 0, .07)
 }
 
-.book-summary ul.summary li i.fa-check {
-    display: none;
-    position: absolute;
-    right: 9px;
-    top: 16px;
- /*   font-size: 9px;*/
-    color: #3c3
-}
-
-.book-summary ul.summary li.done > a {
-    color: #494949;
-    font-weight: 400
-}
-
-.book-summary ul.summary li.done > a i {
-    display: inline
-}
-
 .book-summary ul.summary li a, .book-summary ul.summary li span {
     display: block;
     padding: 0px 10px;
     border-bottom: none;
-    color: #494949;
+    color:  var(--regular-font-color);
     background: 0 0;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -496,7 +470,7 @@ table {
 
 ul.summary li.chapter {
     padding: 0px 40px;
-    color:#494949;
+    color: var(--regular-font-color);
     font-family: "adobe-caslon-pro", serif;
     font-size: 1.1em !important;
     letter-spacing: 1.2px !important;
@@ -560,8 +534,7 @@ ul.summary li.chapter {
     left: 0px;
     bottom: 0;
     overflow-y: auto;
-    color: #000;
-    background: #fff;
+    background:  var(--background-color);
     -webkit-transition: left 250ms ease;
     -moz-transition: left 250ms ease;
     -o-transition: left 250ms ease;
@@ -610,49 +583,11 @@ ul.summary li.chapter {
     border: 0
 }
 
-.buttons:after, .buttons:before {
-    content: " ";
-    display: table;
-    line-height: 0
-}
-
-.buttons:after {
-    clear: both
-}
-
-.button {
-    border: 0;
-    background-color: transparent;
-    background: #eee;
-    color: #666;
-    width: 100%;
-    text-align: center;
-    float: left;
-    line-height: 1.42857143;
-    padding: 8px 4px
-}
-
-.button:hover {
-    color: #444
-}
-
-.button:focus, .button:hover {
-    outline: 0
-}
-
-.button.size-2 {
-    width: 50%
-}
-
-.button.size-3 {
-    width: 33%
-}
-
 .markdown-section {
     display: block;
     word-wrap: break-word;
     overflow: hidden;
-    color: #494949;
+    color:  var(--regular-font-color);
     line-height: 1.7;
     letter-spacing: 1px;
     font-weight: 100px;
@@ -730,7 +665,7 @@ ul.summary li.chapter {
     padding: 0;
     margin: 1.7em 0;
     overflow: hidden;
-    background-color: #e7e7e7;
+    background-color:  var(--section-divider-color);
     border: none
 }
 
@@ -808,7 +743,7 @@ ul.summary li.chapter {
 }
 
 .markdown-section table tr {
-    background-color: #fff;
+    background-color:  var(--background-color);
     border-top: 1px solid #ccc
 }
 
