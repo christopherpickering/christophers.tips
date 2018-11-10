@@ -8,10 +8,9 @@
  --xlarge-font:2.2em;
  --xxlarge-font:3.5em ;
 
-var(--regular-font-color)
 
  /* colors */
- --regular-font-color:  #494949;
+ --regular-font-color: #494949;
  --heading-color: #4EB7D9;
  --title-color: #333;
  --section-heading-color: #ed5740;
