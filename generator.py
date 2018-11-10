@@ -18,7 +18,7 @@ def build_page(page,path):
     my_page = PurePosixPath(Path(page)).stem
     myfname = path.joinpath(my_page).with_suffix('.html')
     
-    contents = templates.get_template('page.html').render(data, content = contents, js = js, css = css, update_date = page_update_date)
+    contents = templates.get_template('page.html').render(data, content = contents, js = js, css = css, update_date = page_update_date, page_name=page.stem)
 
     with myfname.open('w+',encoding="utf-8") as wf:
         wf.write(contents)
