@@ -93,3 +93,36 @@ nano ~/.bash_profile
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
+
+## Add Option to Finder Menu to Share Files with Outlook
+
+1. Open Automator
+2. Create new "Quick Action"
+3. Change the first option for "Workflow recieves Current" to "files or folders"
+4. Change application to "Finder"
+5. Add an action - "Get Specified Finder Items"
+6. Add an action - "Run Apple Script"
+7. Paste the following Apple Script into the text box. Script from [here](https://answers.microsoft.com/en-us/mac/forum/macoffice2011-macstart/moving-the-automator-folder-doesnt-allow-1424-to/983a1074-34ee-40d6-b8ae-7f4d2ff45718)
+
+```applescript
+on run {input, parameters}
+set SelectedItems to input
+tell application "Finder" to set fileName to name of first item of SelectedItems
+tell application "Microsoft Outlook"
+    set newMessage to make new outgoing message with properties {subject:fileName}
+    tell newMessage
+        repeat with aFile in SelectedItems -- the loop through all selected items
+            make new attachment with properties {file:aFile}
+        end repeat
+    end tell
+    open newMessage
+    get newMessage
+end tell
+return input
+end run
+```
+![CNAME](/static/img/setup_a_mac-automator1.png)
+
+8. Save script with a nice name. Now when you right click on a folder/file there will be an option to share with outlook!
+
+![CNAME](/static/img/setup_a_mac-automator2.png)
