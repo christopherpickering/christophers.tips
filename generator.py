@@ -10,7 +10,7 @@ import sys
 
 def build_page(page,path):
     
-    page_update_date = datetime.fromtimestamp(page.stat().st_mtime).strftime('%B %d,%Y %H:%M').lstrip("0").replace(" 0", " ")
+    page_update_date = datetime.fromtimestamp(page.stat().st_mtime).strftime('%B %d,%Y').lstrip("0").replace(" 0", " ")
 
     with open(page,encoding="utf-8") as f:
         contents = markdown2.markdown(f.read(), extras=["fenced-code-blocks"])
