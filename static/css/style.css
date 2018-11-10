@@ -443,16 +443,18 @@ table {
     list-style: none
 }
 
-.book-summary .title {
-    padding-top:20px;
-    font-size:1.9em;
-}
+
 .book-summary ul.summary li.header {
     padding: 10px 15px;
     text-transform: uppercase;
     color: #ed5740;
     font-family: "alternate-gothic-no-2-d",sans-serif !important;
     font-size:1.4em;
+}
+
+.book-summary li.title {
+    padding-top:20px;
+    font-size:1.9em;
 }
 
 .book-summary ul.summary li.divider {
