@@ -10,16 +10,19 @@
 
 
  /* colors */
- --regular-font-color: #494949;
- --heading-color: #4EB7D9;
+--blue:#4EB7D9;
+--red:#ed5740;
+--font:#494949;
+
+
  --title-color: #333;
- --section-heading-color: #ed5740;
+ --red: #ed5740;
  --background-color: #fff;
  --book-header: #7e888b;
  --button-color: #ccc;
  --sidebar-background-color:#fafafa;
  --section-divider-color: #e7e7e7;
- --active-section-heading-color: #008cff;
+ --active-section-heading-color: #4EB7D9;
  --mardown-code-background: #f7f7f7;
 
 }
@@ -35,8 +38,8 @@ body, html {
 
 html {
     font-family: "adobe-caslon-pro", serif;
-    font-size: 1.1em ;
-    color: var(--regular-font-color);
+    font-size: var(--regular-font) ;
+    color: var(--font);
     text-align: justify;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
@@ -82,7 +85,7 @@ h4 {
 h1 {
     text-transform: uppercase;
     font-weight: 400;
-    color:  var(--heading-color);
+    color:  var(--blue);
     font-size: 3.5em !important;
     margin-top: .75em;
     margin-bottom: .4em;
@@ -90,7 +93,7 @@ h1 {
 }
 
 h2 {
-    color:  var(--regular-font-color);
+    color:  var(--font);
     font-size: 1.7em;
     font-weight:bold;
     text-align: justify;
@@ -102,7 +105,7 @@ h2 {
 }
 
 h3 {
-    color:  var(--regular-font-color);
+    color:  var(--font);
     font-size: 1em;
     font-weight:bold;
     text-align: justify;
@@ -113,7 +116,7 @@ h3 {
 }
 
 h4 {
-    color:  var(--regular-font-color);
+    color:  var(--font);
     font-size: 1.5em;
     line-height:120%;
     letter-spacing:1px;
@@ -121,7 +124,7 @@ h4 {
 }
 
 h6 {
-    color:  var(--regular-font-color);
+    color:  var(--font);
     font-size: 1.5em;
     line-height:120%;
     letter-spacing:1px;
@@ -131,7 +134,7 @@ h5 {
     font-size: 2.2em;
     line-height:120%;
     font-weight: 100;
-    color:  var(--regular-font-color);
+    color:  var(--font);
     /*margin-left:16%;
     margin-right:16%;*/
     margin-top:1.5em;
@@ -341,7 +344,7 @@ table {
 .book-header .btn:hover {
     position: relative;
     text-decoration: none;
-    color:  var(--regular-font-color);
+    color:  var(--font);
     background: 0 0
 }
 
@@ -405,7 +408,7 @@ table {
     z-index: 1;
     overflow-y: auto;
     width: 300px;
-    color:  var(--regular-font-color);
+    color:  var(--font);
     background: var(--sidebar-background-color);
     border-right: 1px solid rgba(0, 0, 0, .07);
     -webkit-transition: left 250ms ease;
@@ -429,18 +432,17 @@ table {
     list-style: none
 }
 
-
 .book-summary ul.summary li.header {
     padding: 10px 15px;
     text-transform: uppercase;
-    color:  var(--section-heading-color);
+    color:  var(--red);
     font-family: "alternate-gothic-no-2-d",sans-serif !important;
     font-size:1.4em;
 }
 
 .book-summary li.title {
     padding-top:20px !important;
-    font-size:1.9em !important;
+    font-size:1.7em !important;
     color: var(--title-color);
 }
 
@@ -455,7 +457,7 @@ table {
     display: block;
     padding: 0px 10px;
     border-bottom: none;
-    color:  var(--regular-font-color);
+    color:  var(--font);
     background: 0 0;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -465,7 +467,7 @@ table {
 
 ul.summary li.chapter {
     padding: 0px 40px;
-    color: var(--regular-font-color);
+    color: var(--font);
     font-family: "adobe-caslon-pro", serif;
     font-size: 1.1em !important;
     letter-spacing: 1.2px !important;
@@ -497,7 +499,7 @@ ul.summary li.chapter {
 }
 
 .book-summary ul.summary li.header {
-    color:  var(--title-color);
+    color:  var(--red);
     font-weight: 500;
 }
 
@@ -585,7 +587,7 @@ ul.summary li.chapter {
     display: block;
     word-wrap: break-word;
     overflow: hidden;
-    color:  var(--regular-font-color);
+    color:  var(--font);
     line-height: 1.7;
     letter-spacing: 1px;
     font-weight: 100px;
