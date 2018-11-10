@@ -14,13 +14,3 @@ This is a static html site built with markdown and compiled with python. You can
 
 **Thanks for visiting.**
 
-<p style="border-top: solid rgba(0, 0, 0, .07) 1px;padding-top: 20px;">
-	<span style="font-size: 90%;float: left;">\
-		<small>Last updated {{update_date}}</small>
-	</span>
-	<span style="float: right;">
-		<i class="fab fa-github" style="padding-right: 20px;"></i>
-		<i class="fas fa-envelope" style="padding-right: 20px;"></i>
-		<i class="fab fa-linkedin"></i>
-	</span>
-</p>
