@@ -121,8 +121,8 @@ end tell
 return input
 end run
 ```
-![CNAME](/static/img/setup_a_mac-automator1.png)
+<img src="/static/img/setup_a_mac-automator1.png" alt="CNAME" style="height: 400px;">
 
 8. Save script with a nice name. Now when you right click on a folder/file there will be an option to share with outlook!
 
-![CNAME](/static/img/setup_a_mac-automator2.png)
+<img src="/static/img/setup_a_mac-automator2.png" alt="CNAME" style="height: 400px;">
