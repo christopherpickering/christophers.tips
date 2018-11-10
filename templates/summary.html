@@ -7,7 +7,7 @@
         {% else %}
             <li class="header">{{ group }}</li>
             {% for page in navigation[group] %}
-                <li class="chapter {% if navigation[group][page] == page_name %} active {% endif %} {{page_name}}">
+                <li class="chapter{% if navigation[group][page] == page_name %} active{% endif %}">
                     <a href="/pages/{{ navigation[group][page] }}.html">{{ page }}</a>
                 </li>
             {% endfor %}
