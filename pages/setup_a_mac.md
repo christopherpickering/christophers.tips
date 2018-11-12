@@ -13,7 +13,7 @@
 ### useful packages
 * tree - used in terminal to pretty print directory contents.
 ```sh
-tree -v --charset utf-8
+tree -v --charset utf-8 -I venv
 ```
 ## Terminal
 Nice color scheme - http://color.smyck.org
