@@ -8,7 +8,13 @@
 * HTMLBeautify
 * SideBarEnhancements
 
+## Homebrew
 
+### useful packages
+* tree - used in terminal to pretty print directory contents.
+```sh
+tree -v --charset utf-8
+```
 ## Terminal
 Nice color scheme - http://color.smyck.org
 

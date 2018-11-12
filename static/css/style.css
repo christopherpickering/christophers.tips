@@ -1,30 +1,24 @@
 
 :root {
 /* font sizes */
- --small-font:1em;
- --regular-font:1.1em;
- --medium-font:1.5em;
- --large-font:1.7em;
- --xlarge-font:2.2em;
- --xxlarge-font:3.5em ;
+    --small-font:1em;
+    --regular-font:1.1em;
+    --medium-font:1.5em;
+    --large-font:1.7em;
+    --xlarge-font:2.2em;
+    --xxlarge-font:3.5em ;
 
+    /* colors */
+    --blue:#4EB7D9;
+    --red:#ed5740;
 
- /* colors */
---blue:#4EB7D9;
---red:#ed5740;
---font:#494949;
-
-
- --title-color: #333;
- --red: #ed5740;
- --background-color: #fff;
- --book-header: #7e888b;
- --button-color: #ccc;
- --sidebar-background-color:#fafafa;
- --section-divider-color: #e7e7e7;
- --active-section-heading-color: #4EB7D9;
- --mardown-code-background: #f7f7f7;
-
+    --hundred-grey: #fff;
+    --ninetyeight-grey:#fafafa;
+    --ninety-grey: #e4e6e7;
+    --eighty-grey: #c9cdcf;
+    --fifty-grey: #798386;
+    --thirty-grey:#494f50;
+    --twenty-grey: #303436;
 }
 
 
@@ -39,7 +33,7 @@ body, html {
 html {
     font-family: "adobe-caslon-pro", serif;
     font-size: var(--regular-font) ;
-    color: var(--font);
+    color: var(--thirty-grey);
     text-align: justify;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
@@ -93,7 +87,7 @@ h1 {
 }
 
 h2 {
-    color:  var(--font);
+    color:  var(--thirty-grey);
     font-size: 1.7em;
     font-weight:bold;
     text-align: justify;
@@ -105,7 +99,7 @@ h2 {
 }
 
 h3 {
-    color:  var(--font);
+    color:  var(--thirty-grey);
     font-size: 1em;
     font-weight:bold;
     text-align: justify;
@@ -116,7 +110,7 @@ h3 {
 }
 
 h4 {
-    color:  var(--font);
+    color:  var(--thirty-grey);
     font-size: 1.5em;
     line-height:120%;
     letter-spacing:1px;
@@ -124,7 +118,7 @@ h4 {
 }
 
 h6 {
-    color:  var(--font);
+    color:  var(--thirty-grey);
     font-size: 1.5em;
     line-height:120%;
     letter-spacing:1px;
@@ -134,7 +128,7 @@ h5 {
     font-size: 2.2em;
     line-height:120%;
     font-weight: 100;
-    color:  var(--font);
+    color:  var(--thirty-grey);
     /*margin-left:16%;
     margin-right:16%;*/
     margin-top:1.5em;
@@ -162,7 +156,7 @@ audio:not([controls]) {
 
 body {
     margin: 0;
-    background-color: var(--background-color);
+    background-color: var(--hundred-grey);
 }
 
 a:focus {
@@ -325,7 +319,7 @@ table {
     height: 50px;
     padding: 0px;
     z-index: 2;
-    color:  var(--book-header);
+    color:  var(--fifty-grey);
     background: 0 0;
 }
 
@@ -334,7 +328,7 @@ table {
     height: 50px;
     padding: 0 17px;
     border-bottom: none;
-    color: var(--button-color);
+    color: var(--eighty-grey);
     line-height: 50px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -344,7 +338,7 @@ table {
 .book-header .btn:hover {
     position: relative;
     text-decoration: none;
-    color:  var(--font);
+    color:  var(--thirty-grey);
     background: 0 0
 }
 
@@ -408,8 +402,8 @@ table {
     z-index: 1;
     overflow-y: auto;
     width: 300px;
-    color:  var(--font);
-    background: var(--sidebar-background-color);
+    color:  var(--thirty-grey);
+    background: var(--ninetyeight-grey);
     border-right: 1px solid rgba(0, 0, 0, .07);
     -webkit-transition: left 250ms ease;
     -moz-transition: left 250ms ease;
@@ -443,7 +437,6 @@ table {
 .book-summary li.title {
     padding-top:20px !important;
     font-size:1.7em !important;
-    color: var(--title-color);
 }
 
 .book-summary ul.summary li.divider {
@@ -457,7 +450,7 @@ table {
     display: block;
     padding: 0px 10px;
     border-bottom: none;
-    color:  var(--font);
+    color:  var(--thirty-grey);
     background: 0 0;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -467,7 +460,7 @@ table {
 
 ul.summary li.chapter {
     padding: 0px 40px;
-    color: var(--font);
+    color: var(--thirty-grey);
     font-family: "adobe-caslon-pro", serif;
     font-size: 1.1em !important;
     letter-spacing: 1.2px !important;
@@ -483,7 +476,7 @@ ul.summary li.chapter {
 }
 
 .book-summary ul.summary li.active > a {
-    color:  var(--active-section-heading-color);
+    color:  var(--blue);
     background: 0 0;
     text-decoration: none
 }
@@ -540,7 +533,7 @@ ul.summary li.chapter {
     left: 0px;
     bottom: 0;
     overflow-y: auto;
-    background:  var(--background-color);
+    background:  var(--hundred-grey);
     -webkit-transition: left 250ms ease;
     -moz-transition: left 250ms ease;
     -o-transition: left 250ms ease;
@@ -587,10 +580,10 @@ ul.summary li.chapter {
     display: block;
     word-wrap: break-word;
     overflow: hidden;
-    color:  var(--font);
+    color:  var(--thirty-grey);
     line-height: 1.7;
     letter-spacing: 1px;
-    font-weight: 100px;
+    font-weight: 100;
     line-height: 135%;
     text-align:justify;
     text-size-adjust: 100%;
@@ -665,7 +658,7 @@ ul.summary li.chapter {
     padding: 0;
     margin: 1.7em 0;
     overflow: hidden;
-    background-color:  var(--section-divider-color);
+    background-color:  var(--ninety-grey);
     border: none
 }
 
@@ -694,11 +687,11 @@ ul.summary li.chapter {
     margin: 0;
     padding: .85em 1em;
     margin-bottom: 1.275em;
-    background:  var(--mardown-code-background);
+    background:  var(--ninetyeight-grey);
     -webkit-border-radius: 5px !important;
     -moz-border-radius: 5px !important;
     border-radius: 5px !important;
-    border: 1px solid #ccc !important;
+    border: 1px solid var(--eighty-grey) !important;
 }
 
 .markdown-section pre > code {
@@ -721,7 +714,7 @@ ul.summary li.chapter {
     padding: .2em;
     margin: 0;
     font-size: .85em !important;
-    background-color:  var(--mardown-code-background)
+    background-color:  var(--ninetyeight-grey)
 }
 
 .markdown-section code:after, .markdown-section code:before {
@@ -743,8 +736,8 @@ ul.summary li.chapter {
 }
 
 .markdown-section table tr {
-    background-color:  var(--background-color);
-    border-top: 1px solid #ccc
+    background-color:  var(--hundred-grey);
+    border-top: 1px solid var(--eighty-grey)
 }
 
 .markdown-section table tr:nth-child(2n) {
@@ -825,7 +818,7 @@ ul.summary li.chapter {
     align-content: center;
     flex-direction: column;
     font-size: 40px;
-    color: #ccc;
+    color: var(--eighty-grey);
     text-align: center;
     -webkit-transition: all 350ms ease;
     -moz-transition: all 350ms ease;
@@ -866,5 +859,7 @@ ul.summary li.chapter {
 a {
     text-decoration: none
 }
-
+.small {
+    font-size: var(--small-font);
+}
 
