@@ -421,6 +421,8 @@ service cron restart
 more /var/log/cron.log
 # or 
 grep cron /var/log/syslog
+# or
+tail -30 /var/log/cron.log
 
 ```
 
