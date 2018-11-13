@@ -273,6 +273,18 @@ server {
         include proxy_params;
         proxy_pass http://unix:/home/path/to/project/project.sock;
     }
+
+    # to use nginx analitics site /nginx_status
+    location /nginx_status {
+        stub_status on;
+        access_log   off;
+        # for specific IP
+        # allow 1.1.1.1;
+        # deny all;
+        # or allow all
+        allow all;
+    }
+
 }
 ```
 
