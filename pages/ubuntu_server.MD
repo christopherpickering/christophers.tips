@@ -351,7 +351,7 @@ sudo systemctl restart nginx
 # for static file changes
 sudo service nginx reload # or restart
 # for dynamic file changes
-sudo service gunicorn reload # or restart
+sudo service gunicorn restart
 ```
 
 ## Setup LibreOffice for File Conversion
