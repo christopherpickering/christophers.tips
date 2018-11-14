@@ -1,22 +1,24 @@
 <ul class="summary">
     <li class="header title" style="text-align: center;"><a href="/">{{ title }}</a></li>
     <li class="divider"></li>
+    <div id="accordion">
     {% for group in navigation %}
         {% if group == 'devider' %}
             <li class="divider"></li>
         {% else %}
-        <div id="accordion">
+        <div class="accordion-content {% if navigation[group][page] == page_name %} default {%endif %}">
             <li class="header accordion-toggle">{{ group }}</li>
             {% for page in navigation[group] %}
-            <div class="accordion-content {% if navigation[group][page] == page_name %} default {%endif %}">
+            
                 <li class="chapter  {% if navigation[group][page] == page_name %} active{% endif %}">
                     <a href="/pages/{{ navigation[group][page] }}.html">{{ page }}</a>
                 </li>
-            </div>
+           
             {% endfor %}
-        </div>
+         </div>
         {% endif %}
 
     {% endfor %}
+    </div>
 </ul>
 
