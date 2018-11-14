@@ -71,14 +71,14 @@ shutil.rmtree(website_root / "static", ignore_errors=True)
 shutil.copytree(static_root, website_root / "static")
 
 # get static files
-js = [
-    str(child.relative_to(website_root))
-    for child in website_root.joinpath("static").joinpath("js").iterdir()
-]
-css = [
-    str(child.relative_to(website_root))
-    for child in website_root.joinpath("static").joinpath("css").iterdir()
-]
+#js = [
+#    str(child.relative_to(website_root))
+#    for child in website_root.joinpath("static").joinpath("js").iterdir()
+#]
+#css = [
+#    str(child.relative_to(website_root))
+#    for child in website_root.joinpath("static").joinpath("css").iterdir()
+#]
 
 # make pages dir
 website_root.joinpath("pages").mkdir(exist_ok=True, parents=True)
