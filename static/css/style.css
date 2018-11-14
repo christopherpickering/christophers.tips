@@ -21,7 +21,10 @@
     --twenty-grey: #303436;
 }
 
-
+.accordion-toggle {cursor: pointer;}
+  .accordion-content {display: none;}
+  .accordion-content.default {display: block;}
+  
 body, html {
     height: 100%
 }
