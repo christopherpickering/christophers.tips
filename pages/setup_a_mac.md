@@ -1,5 +1,12 @@
 # Setting Up a Mac
 
+## Time Machine
+
+To add a size limit to time machine backups. Backup size should be around 1.5x the hard drive size.. so 500gb > 750gb > 750 x 1024 = 768000
+```sh
+sudo defaults write /Library/Preferences/com.apple.TimeMachine MaxSize 102400
+```
+
 ## Sublime Text
 
 ### Useful packages
