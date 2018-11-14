@@ -70,7 +70,7 @@ shutil.rmtree(website_root / "static", ignore_errors=True)
 # copy static files
 shutil.copytree(static_root, website_root / "static")
 
- get static files
+# get static files
 js = [
     str(child.relative_to(website_root))
     for child in website_root.joinpath("static").joinpath("js").iterdir()
