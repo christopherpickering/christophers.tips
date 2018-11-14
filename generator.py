@@ -7,7 +7,7 @@ import shutil
 import markdown2
 from datetime import datetime
 import sys
-
+from html5print import HTMLBeautifier
 
 def build_page(page, path):
 
@@ -32,6 +32,9 @@ def build_page(page, path):
         update_date=page_update_date,
         page_name=page.stem,
     )
+    
+    # prettify
+    contents = HTMLBeautifier.beautify(contents, 4)
 
     with myfname.open("w+", encoding="utf-8") as wf:
         wf.write(contents)
