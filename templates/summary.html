@@ -8,7 +8,7 @@
         {% else %}
         
             <li class="header accordion-toggle">{{ group }}</li>
-            <div class="accordion-content {% if navigation[group][page] == page_name %} default {%endif %}">
+            <div class="accordion-content {% if page_name in navigation[group] %} default {%endif %}">
             {% for page in navigation[group] %}
             
                 <li class="chapter  {% if navigation[group][page] == page_name %} active{% endif %}">
