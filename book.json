@@ -24,12 +24,11 @@
             "Django on Mac":"Mac_Django_Setup",
             "Ubuntu Server":"ubuntu_server"
         },
-        
         "Database Connections":{
             "Ubuntu CX Oracle":"cx_oracle_ubuntu",
             "Mac CX Oracle":"cxoracle_mac",
             "Mac pyodbc":"pyodbc_mac"
         },
-        "devider":"",
+        "devider":""
     }
 }
