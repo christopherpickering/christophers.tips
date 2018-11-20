@@ -427,14 +427,14 @@ sudo nano /etc/rsyslog.d/50-default.conf
 
 # restart rsyslog and cron
 sudo service rsyslog restart
-service cron restart
+sudo service cron restart
 
 # view log
-more /var/log/cron.log
+sudo more /var/log/cron.log
 # or 
-grep cron /var/log/syslog
+sudo grep cron /var/log/syslog
 # or
-tail -30 /var/log/cron.log
+sudo tail -30 /var/log/cron.log
 
 ```
 
