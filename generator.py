@@ -12,6 +12,7 @@ from csscompressor import compress
 import hashlib
 import jsmin
 
+
 def build_page(page, path):
 
     page_update_date = (
@@ -35,7 +36,7 @@ def build_page(page, path):
         update_date=page_update_date,
         page_name=page.stem,
     )
-    
+
     # prettify
     contents = HTMLBeautifier.beautify(contents, 4)
 
@@ -71,43 +72,47 @@ shutil.rmtree(website_root / "pages", ignore_errors=True)
 shutil.rmtree(website_root / "static", ignore_errors=True)
 
 # build compressed CSS files
-contents = ''
+contents = ""
 
 for file in static_root.joinpath("css").iterdir():
     print(file.name)
-    if file.suffix == '.css' and file.name != 'all.css':
+    if file.suffix == ".css" and file.name != "all.css":
 
-        contents += compress(open(file, 'r').read())
+        contents += compress(open(file, "r").read())
 
 
-new_name = hashlib.md5(contents.encode('utf-8')).hexdigest()[-5:]
-css_file = file.parents[0].joinpath('CACHE').joinpath(new_name).with_suffix(".css")
+new_name = hashlib.md5(contents.encode("utf-8")).hexdigest()[-5:]
+css_file = file.parents[0].joinpath("CACHE").joinpath(new_name).with_suffix(".css")
 with css_file.open("w+", encoding="utf-8") as wf:
-        wf.write(contents)
+    wf.write(contents)
 
 # build compressed JS files
-contents = ''
+contents = ""
 
 for file in static_root.joinpath("js").iterdir():
-    if file.suffix == '.js' and file.name != 'jquery':
+    if file.suffix == ".js" and file.name != "jquery":
 
-        contents += compress(open(file, 'r').read())
+        contents += compress(open(file, "r").read())
 
 
-new_name = hashlib.md5(contents.encode('utf-8')).hexdigest()[-5:]
-js_file = file.parents[0].joinpath('CACHE').joinpath(new_name).with_suffix(".js")
+new_name = hashlib.md5(contents.encode("utf-8")).hexdigest()[-5:]
+js_file = file.parents[0].joinpath("CACHE").joinpath(new_name).with_suffix(".js")
 with js_file.open("w+", encoding="utf-8") as wf:
-        wf.write(contents)
+    wf.write(contents)
 
 # copy static files
 shutil.copytree(static_root, website_root / "static")
 
 # get static files
 js = [
-    website_root.joinpath("static","js","CACHE",css_file.name).with_suffix(".js").relative_to(website_root)
+    website_root.joinpath("static", "js", "CACHE", js_file.name)
+    .with_suffix(".js")
+    .relative_to(website_root)
 ]
 css = [
-    website_root.joinpath("static","css","CACHE",js_file.name).with_suffix(".css").relative_to(website_root)
+    website_root.joinpath("static", "css", "CACHE", css_file.name)
+    .with_suffix(".css")
+    .relative_to(website_root)
 ]
 print(css)
 
