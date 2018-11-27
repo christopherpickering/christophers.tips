@@ -24,7 +24,7 @@
 
     $window.resize(resize).trigger("resize");
 
-    // accordion
+    /*accordion*/
 
     $(document).ready(function($) {
         $("#accordion")
