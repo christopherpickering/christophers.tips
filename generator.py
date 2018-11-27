@@ -9,7 +9,6 @@ import sys
 from html5print import HTMLBeautifier
 from csscompressor import compress
 import hashlib
-from jsmin import jsmin
 
 
 def build_page(page, path):
@@ -88,9 +87,9 @@ with css_file.open("w+", encoding="utf-8") as wf:
 contents = ""
 
 for file in static_root.joinpath("js").iterdir():
-    if file.suffix == ".js" :
+    if file.suffix == ".js" and file.name != "jquery.js":
 
-        contents += jsmin(open(file, "r").read())
+        contents += compress(open(file, "r").read())
 
 
 new_name = hashlib.md5(contents.encode("utf-8")).hexdigest()[-5:]
