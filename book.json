@@ -18,7 +18,8 @@
         "MISC":{
             "Make this Site":"make_this_site",
             "Git":"git",
-            "Mac Setup":"setup_a_mac"
+            "Mac Setup":"setup_a_mac",
+            "Ubuntu Kiosk":"ubuntu_kiosk"
         },
         "Web Development":{
             "Django on Mac":"Mac_Django_Setup",
