@@ -1,5 +1,4 @@
 import json
-from pprint import pprint
 import os
 import jinja2
 from pathlib import Path, PurePosixPath
@@ -75,7 +74,6 @@ shutil.rmtree(website_root / "static", ignore_errors=True)
 contents = ""
 
 for file in static_root.joinpath("css").iterdir():
-    print(file.name)
     if file.suffix == ".css" and file.name != "all.css":
 
         contents += compress(open(file, "r").read())
@@ -90,7 +88,7 @@ with css_file.open("w+", encoding="utf-8") as wf:
 contents = ""
 
 for file in static_root.joinpath("js").iterdir():
-    if file.suffix == ".js" and file.name != "jquery":
+    if file.suffix == ".js" and file.name != "jquery.js":
 
         contents += compress(open(file, "r").read())
 
@@ -114,7 +112,6 @@ css = [
     .with_suffix(".css")
     .relative_to(website_root)
 ]
-print(css)
 
 # make pages dir
 website_root.joinpath("pages").mkdir(exist_ok=True, parents=True)
