@@ -1,9 +1,7 @@
-(function($) {
+(function($){
     $(document).ready(function(e) {
-        console.log("started script");
         $("body").on("click", ".js-toolbar-action", function(event) {
             event.preventDefault();
-            console.log("clicked");
             var $img = $(".book");
             if (!$img.hasClass("with-summary")) {
                 $img.addClass("with-summary");
@@ -36,7 +34,6 @@
                 $(this)
                     .next()
                     .slideToggle("fast");
-
                 //Hide the other panels
                 $(".accordion-content")
                     .not($(this).next())
