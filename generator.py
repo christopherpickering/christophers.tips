@@ -73,7 +73,7 @@ shutil.rmtree(website_root / "static", ignore_errors=True)
 contents = ''
 
 for file in static_root.joinpath("css").iterdir():
-    if file.suffix == '.css':
+    if file.suffix == '.css' and file.name != 'all':
 
         contents += compress(open(file, 'r').read())
 
