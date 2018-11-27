@@ -19,15 +19,14 @@
 
         <!-- typekit -->
         <link rel="stylesheet" href="https://use.typekit.net/wtg5gdq.css">
+
         <!-- styles -->    
-        <link rel="stylesheet" href="/static/css/style.css">
-        <!-- code highlight-->
-        <link rel="stylesheet" href="/static/css/highlight.css">
+        {% for file in css %}
+        <link rel="stylesheet" href="/{{ file }}">
+        {% endfor %}       
+
         {% block includes %}{% endblock %}  
         
-        <!-- fontawesome -->
-        <link rel="stylesheet" href="/static/css/all.css">
-
         <!-- google analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127293191-1"></script>
         <script>

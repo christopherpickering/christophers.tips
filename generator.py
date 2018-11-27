@@ -8,6 +8,8 @@ import markdown2
 from datetime import datetime
 import sys
 from html5print import HTMLBeautifier
+from csscompressor import compress
+import hashlib
 
 def build_page(page, path):
 
@@ -67,6 +69,20 @@ if not os.path.exists(website_root):
 shutil.rmtree(website_root / "pages", ignore_errors=True)
 shutil.rmtree(website_root / "static", ignore_errors=True)
 
+# build compressed CSS files
+contents = ''
+
+for file in static_root.joinpath("css").iterdir():
+    if file.suffix == '.css':
+
+        contents += compress(open(file, 'r').read())
+
+
+new_name = hashlib.md5(contents.encode('utf-8')).hexdigest()[-5:]
+css_file = file.parents[0].joinpath('CACHE').joinpath(new_name).with_suffix(".css")
+with css_file.open("w+", encoding="utf-8") as wf:
+        wf.write(contents)
+
 # copy static files
 shutil.copytree(static_root, website_root / "static")
 
@@ -76,9 +92,9 @@ js = [
     for child in website_root.joinpath("static").joinpath("js").iterdir()
 ]
 css = [
-    str(child.relative_to(website_root))
-    for child in website_root.joinpath("static").joinpath("css").iterdir()
+    website_root.joinpath("static","css","CACHE",css_file.name).with_suffix(".css").relative_to(website_root)
 ]
+print(css)
 
 # make pages dir
 website_root.joinpath("pages").mkdir(exist_ok=True, parents=True)
