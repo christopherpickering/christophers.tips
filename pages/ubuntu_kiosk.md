@@ -116,7 +116,9 @@ Navigate go to url "about:config" to open settings.
 Search for pdf
 
 change "cursorToolOnLoad" to 1
+
 change "disablePageMode" to true
+
 change "sidebarViewOnLoad" to 4
 
 ## Other Settings
@@ -126,7 +128,9 @@ Settings > Universal Access > Screen Keyboard > On
 
 ### Turn off Screen Saver
 Settings > Power > Blank Screen > Never
+
 Automatic Suspend > Off
+
 Bluetooth Off
 
 ### Turn off Notifications
@@ -146,3 +150,32 @@ sudo crontab -e
 # save and then restart cron
 sudo service cron restart
 ```
+
+## Enable Remote Access
+
+Because we installed the basic UBUNTU the package we need was not installed. Install now.
+
+```sh
+sudo apt install -y vino
+```
+1. Settings > Sharing > Turn On
+2. Turn on screen sharing
+3. Add a password
+
+Stop encryption
+```sh
+sudo gsettings set org.gnome.Vino require-encryption false
+``` 
+
+Other possible helps
+```sh
+sudo apt-get install dconf-tools
+```
+Open dconf. Navigate to org > gnome > desktop > remote-access
+* Turnn of require encription
+* chang auth method to vnc
+
+Restart for changes to work.
+
+
+
