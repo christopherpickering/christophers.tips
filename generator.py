@@ -10,6 +10,7 @@ import sys
 from html5print import HTMLBeautifier
 from csscompressor import compress
 import hashlib
+import jsmin
 
 def build_page(page, path):
 
@@ -83,13 +84,26 @@ css_file = file.parents[0].joinpath('CACHE').joinpath(new_name).with_suffix(".cs
 with css_file.open("w+", encoding="utf-8") as wf:
         wf.write(contents)
 
+# build compressed JS files
+contents = ''
+
+for file in static_root.joinpath("js").iterdir():
+    if file.suffix == '.js' and file.name != 'jquery':
+
+        contents += compress(open(file, 'r').read())
+
+
+new_name = hashlib.md5(contents.encode('utf-8')).hexdigest()[-5:]
+js_file = file.parents[0].joinpath('CACHE').joinpath(new_name).with_suffix(".css")
+with js_file.open("w+", encoding="utf-8") as wf:
+        wf.write(contents)
+
 # copy static files
 shutil.copytree(static_root, website_root / "static")
 
 # get static files
 js = [
-    str(child.relative_to(website_root))
-    for child in website_root.joinpath("static").joinpath("js").iterdir()
+    website_root.joinpath("static","css","CACHE",css_file.name).with_suffix(".css").relative_to(website_root)
 ]
 css = [
     website_root.joinpath("static","css","CACHE",css_file.name).with_suffix(".css").relative_to(website_root)

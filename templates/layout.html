@@ -27,6 +27,9 @@
 
         {% block includes %}{% endblock %}  
         
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="/static/css/all.css">
+
         <!-- google analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127293191-1"></script>
         <script>
@@ -44,8 +47,10 @@
         {% block body %}{% endblock %}
 
         <!-- jquery -->
-        <script src="/static/js/jquery.js"></script>     
-        <script src="/static/js/my.js"></script>
+        <script src="/static/js/jquery.js"></script>   
+        {% for file in js %}  
+        <script src="/{{ file }}"></script>
+        {% endfor %}
     </body>
 </html>
 
