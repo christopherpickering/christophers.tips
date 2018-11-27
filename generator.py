@@ -107,7 +107,7 @@ js = [
     website_root.joinpath("static","js","CACHE",css_file.name).with_suffix(".js").relative_to(website_root)
 ]
 css = [
-    website_root.joinpath("static","css","CACHE",css_file.name).with_suffix(".css").relative_to(website_root)
+    website_root.joinpath("static","css","CACHE",js_file.name).with_suffix(".css").relative_to(website_root)
 ]
 print(css)
 
