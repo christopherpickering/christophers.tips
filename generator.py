@@ -88,7 +88,7 @@ with css_file.open("w+", encoding="utf-8") as wf:
 contents = ""
 
 for file in static_root.joinpath("js").iterdir():
-    if file.suffix == ".js" and file.name != "jquery.js":
+    if file.suffix == ".js" :
 
         contents += jsmin(open(file, "r").read())
 
