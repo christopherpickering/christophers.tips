@@ -94,7 +94,7 @@ for file in static_root.joinpath("js").iterdir():
 
 
 new_name = hashlib.md5(contents.encode('utf-8')).hexdigest()[-5:]
-js_file = file.parents[0].joinpath('CACHE').joinpath(new_name).with_suffix(".css")
+js_file = file.parents[0].joinpath('CACHE').joinpath(new_name).with_suffix(".js")
 with js_file.open("w+", encoding="utf-8") as wf:
         wf.write(contents)
 
@@ -103,7 +103,7 @@ shutil.copytree(static_root, website_root / "static")
 
 # get static files
 js = [
-    website_root.joinpath("static","css","CACHE",css_file.name).with_suffix(".css").relative_to(website_root)
+    website_root.joinpath("static","js","CACHE",css_file.name).with_suffix(".js").relative_to(website_root)
 ]
 css = [
     website_root.joinpath("static","css","CACHE",css_file.name).with_suffix(".css").relative_to(website_root)
