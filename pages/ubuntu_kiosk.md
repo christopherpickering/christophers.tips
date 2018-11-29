@@ -78,6 +78,53 @@ sudo nano /etc/default/grub
 sudo update-grub
 ```
 
+### Reboot Every Night
+We would like the PC to reboot daily. This must be done on the admin account.
+
+Add an entry to crontab:
+
+```sh
+sudo crontab -e
+
+# every day at 2 am
+0 2 * * * /sbin/shutdown -r now 
+
+# save and then restart cron
+sudo service cron restart
+```
+
+## Enable Remote Access
+
+Because we installed the basic UBUNTU the package we need was not installed. Install now.
+
+```sh
+sudo apt install -y vino
+```
+
+These steps must be done on the kiosk user, not admin.
+
+1. Settings > Sharing > Turn On
+2. Turn on screen sharing
+3. Add a password
+
+Stop encryption
+```sh
+sudo gsettings set org.gnome.Vino require-encryption false
+``` 
+
+Other possible helps
+```sh
+sudo apt-get install dconf-tools
+```
+
+These steps must be done as the kiosk user, not admin.
+
+Open dconf. Navigate to org > gnome > desktop > remote-access
+* Turnn of require encription
+* chang auth method to vnc
+
+Restart for changes to work.
+
 ## Create firefox startup script
 
 This piece of the setup is done in the kiosk user section.
@@ -136,46 +183,6 @@ Bluetooth Off
 ### Turn off Notifications
 Settings > Notifications > Off
 
-### Reboot Every Night
-We would like the PC to reboot daily. This must be done on the admin account.
-
-Add an entry to crontab:
-
-```sh
-sudo crontab -e
-
-# every day at 2 am
-0 2 * * * /sbin/shutdown -r now 
-
-# save and then restart cron
-sudo service cron restart
-```
-
-## Enable Remote Access
-
-Because we installed the basic UBUNTU the package we need was not installed. Install now.
-
-```sh
-sudo apt install -y vino
-```
-1. Settings > Sharing > Turn On
-2. Turn on screen sharing
-3. Add a password
-
-Stop encryption
-```sh
-sudo gsettings set org.gnome.Vino require-encryption false
-``` 
-
-Other possible helps
-```sh
-sudo apt-get install dconf-tools
-```
-Open dconf. Navigate to org > gnome > desktop > remote-access
-* Turnn of require encription
-* chang auth method to vnc
-
-Restart for changes to work.
 
 
 
