@@ -168,6 +168,12 @@ change "disablePageMode" to true
 
 change "sidebarViewOnLoad" to 4
 
+### Do not reopen tabs on crash
+
+When firefox starts we always want the home page, do not attempt to reopen any tabs.
+
+Seach for session. change browser.sessionstore.resume_from_crash to False.
+
 ## Other Settings
 
 ### Turn on On Screen Keybaord

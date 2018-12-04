@@ -14,6 +14,7 @@ sudo defaults write /Library/Preferences/com.apple.TimeMachine MaxSize 102400
 * Virtualenv
 * HTMLBeautify
 * SideBarEnhancements
+* ZPL Format
 
 ## Homebrew
 
