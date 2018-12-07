@@ -140,3 +140,12 @@ end run
 8. Save script with a nice name. Now when you right click on a folder/file there will be an option to share with outlook!
 
 <img src="/static/img/setup_a_mac-automator2.png" alt="CNAME" style="height: 400px;">
+
+## Run as website from any directory
+To run a website localy from any server
+
+```sh
+cd to/path/of/site
+python -m  http.server 8001 # or any port #
+```
+Navigate to 0.0.0.0:8001
