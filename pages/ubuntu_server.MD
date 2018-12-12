@@ -344,7 +344,7 @@ sudo tail -30 /var/log/nginx/error.log
 ### for nginx 502 errors.. 
 The problem is most likely in a gunicorn error. You can check by manually running the gunicorn wsgi-
 ```sh
-gunicorn --log-file=- appname.wsgi:application
+gunicorn --log-file=- projectname.wsgi:application
 ```
 This should give you any python errors you have.. most likely forgot to install a python module you are importing.
 
