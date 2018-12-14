@@ -1,99 +1,68 @@
 #How To Make This Site
 
 This site can be made in a few simple steps -
-* Install and create a Gitbook
-* Customize Gitbook with a theme
-* Push Gitbook to Github repo
+* Setup the project
+* Add content
 * Register a domain with Google
 * Add CNAME records
 
-## Install and Create a Gitbook
+### Clone this project
 
-If you do not have npm installed you will need to do that first.
+Clone the project
 
 ```sh
-brew intall npm
-npm install -g gitbook-cli
-gitbook update
+git clone https://github.com/christopherpickering/christophers.tips.git
 ```
 
-Next create two directories, one for the Gitbook MD files and the other for the static site that will be generated. Gitbook will generate the static site inside the MD file but we'll need to move it to the other direcory when pushing to Github.
+### Create a virtual environment
 
 ```sh
-mkdir documentation
-cd documentation
-mkdir site
-mkdir gitbook
+# rename project
+mv 'christophers.tips' 'myproject'
+cd myproject
+virtualenv venv
+
+# activate
+source venv/bin/activate
+
+# install packages
+pip install jinja2
+pip install markdown2
+pip install html5print
+pip install csscompressor
 ```
 
-Next both directories need to have a git repo intialized. Go to Github.com and make a repo for you MD files with any name you like. Make another repo named myusername.gitbook.io.
+### Make a directory for the website to generate into
 
 ```sh
-cd gitbook
-git init
-touch .gitignore
-
-# you need to add _book to the .gitignore so you do not duplate on github
-nano .gitignore
-_book
-# control + x then y to save
-
-git remote add origin https//github.com/myusername/myrepo.git
-
-cd ../site
-git init
-git clone https://github.com/christopherpickering/christopherpickering.github.io.git
-mv christopherpickering.github.io/* .
-rm -Rf christopherpickering.github.io
-git remote add origin https://github.com/myusername/myusername.gitbook.io.git
+mkdir website
 ```
 
-Next create the gitbook.
+### Add a git repo to your project
 
 ```sh
-gitbook init
-```
+# one for the markdown
+git init 
+git remote add origin /path/to/remote
 
-[Gitbook Documentation] is available.
-
-## Create a Gitbook Theme
-
-By default any theming we do will extend the default. Create the following structure for themes.
-
-```sh
-cd gitbook
-mkdir _layouts
-cd _layouts
-mkdir websites
 cd websites
-# any page tweaks will be here
-touch page.html
-# any page header tweaks will be here
-touch header.html
+git init
+git remote add origin /path/to/remote
+
 ```
-Copy any theme sections you need to change from the [default theme].
-[example theme 1]
-[example theme 2]
-[example theme 3]
 
+## Add content
 
-## Push Gitbook to Github Repo
+First, update the book.json file to your site information.
 
-A few bash scripts are created to make doing updates simple.
+The home page is top level in the directory - index.md. Any other page for the site is in the pages/ directory.
 
-- build.bash -this script will only build the static site locally. 
-- push.bash -this script will push any changes in both repos to Github.
-- build_and_push.bash -this script bill build the site and push udpates to Github.
+After adding a new page the book.json file needs to be updated to include the new page in the menu.
 
-You will most likely need to give yourself permission to run the scripts.
+When you are ready to publish your content, be sure the virtual environment is active. Then run the update script.
 
 ```sh
-sudo chmod 700 build.bash
-sudo chmod 700 push.bash
-sudo chmod 700 build_and_push.bash
-sudo chmod 700 pull.bash
-
-./build_and_push.bash
+./build.bash
 ```
 
 ## Register a Domain With Google
@@ -120,24 +89,8 @@ www.mysite.com
 Finally, build and push the site.
 
 ```sh
-# to build and push to github
-./build_and_push.bash 'optonal commit message'
-
 # to just build for testing
 ./build.bash
-
-# to pull latest updates from github
-./pull.bash
-
-# to push latest updates to github
-./push.bash 'optional commit message'
 ```
 
 Nice! You will be able to see you site now at mysite.com!
-
-
-[Gitbook Documentation]: <https://toolchain.gitbook.com>
-[default theme]:<https://github.com/GitbookIO/theme-default/tree/master/_layouts>
-[example theme 1]:<https://github.com/antonlegoo/gitbook-plugin-theme-gestalt>
-[example theme 2]:<https://github.com/GitbookIO/theme-api>
-[example theme 3]:<https://github.com/GitbookIO/theme-official>
