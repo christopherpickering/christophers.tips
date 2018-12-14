@@ -27,11 +27,11 @@
 
 .footer-links {
     float: right;
-    
+    margin-top:-10px;
 }
 .footer-links > a {
     text-decoration: none;
-    color: var(--thirty-grey);
+    color: var(--thirty-grey) !important;
 }
 
 body, html {
