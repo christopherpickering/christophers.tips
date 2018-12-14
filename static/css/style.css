@@ -29,7 +29,7 @@
     float: right;
     margin-top:-10px;
 }
-.footer-links > a {
+.footer-links a {
     text-decoration: none;
     color: var(--thirty-grey) !important;
 }
