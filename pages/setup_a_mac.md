@@ -146,6 +146,6 @@ To run a website localy from any server
 
 ```sh
 cd to/path/of/site
-python -m  http.server 8001 # or any port #
+python3 -m  http.server 8001 # or any port #
 ```
 Navigate to 0.0.0.0:8001
