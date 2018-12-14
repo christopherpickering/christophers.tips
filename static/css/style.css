@@ -24,7 +24,15 @@
 .accordion-toggle {cursor: pointer;}
   .accordion-content {display: none;}
   .accordion-content.default {display: block;}
-  
+
+.footer-links {
+    float: right;
+    color: var(--thirty-grey);
+}
+.footer-links a {
+    text-decoration: none;;
+}
+
 body, html {
     height: 100%
 }
