@@ -28,6 +28,7 @@ source venv/bin/activate
 # install packages
 pip install jinja2
 pip install markdown2
+pip install pigments
 pip install html5print
 pip install csscompressor
 ```

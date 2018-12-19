@@ -28,7 +28,8 @@
         "Database Connections":{
             "Ubuntu CX Oracle":"cx_oracle_ubuntu",
             "Mac CX Oracle":"cxoracle_mac",
-            "Mac pyodbc":"pyodbc_mac"
+            "Mac pyodbc":"pyodbc_mac",
+            "Mac Postgres":"postgres_db_mac"
         },
         "devider":""
     }

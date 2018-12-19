@@ -57,6 +57,11 @@ sudo nano /etc/gdm3/custom.conf
 AutomaticLoginEnable = True
 AutomaticLogin = kiosk
 
+# next allow kiosk to sudo without a pass
+sudo visudo
+# add this to the end of file
+kiosk ALL=(ALL) NOPASSWD: ALL
+
 # fianlly reboot as kiosk user for remaining changes. 
 # if everything worked the user should auto login.
 sudo reboot
@@ -137,6 +142,8 @@ In Termiinal:
 nano ~/Desktop/firefox.sh
 
 # add this to the file and save. This will enable gestures in firefox.
+# sleep for 30 seconds so internet can connect
+sleep 30s
 MOZ_USE_XINPUT2=1 /usr/bin/firefox
 ```
 

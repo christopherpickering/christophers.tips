@@ -144,6 +144,14 @@ exit
 mysql -u root -p
 ```
 
+Settings for mysql can be changed in /etc/mysql/my.cnf
+Tune sql -
+```sh
+sudo apt install mysqltuner
+
+mysqltuner
+```
+
 Finally, create the database you referenced in django's settings.py. 
 
 ```sql

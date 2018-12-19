@@ -21,7 +21,7 @@ def build_page(page, path):
     )
 
     with open(page, encoding="utf-8") as f:
-        contents = markdown2.markdown(f.read(), extras=["fenced-code-blocks"])
+        contents = markdown2.markdown(f.read(), extras=["fenced-code-blocks","cuddled-lists"])
 
     my_page = PurePosixPath(Path(page)).stem
     myfname = path.joinpath(my_page).with_suffix(".html")
