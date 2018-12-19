@@ -29,7 +29,8 @@
             "Ubuntu CX Oracle":"cx_oracle_ubuntu",
             "Mac CX Oracle":"cxoracle_mac",
             "Mac pyodbc":"pyodbc_mac",
-            "Mac Postgres":"postgres_db_mac"
+            "Mac Postgres":"postgres_db_mac",
+            "Ubunto Postgres":"postgres_db_ubuntu"
         },
         "devider":""
     }

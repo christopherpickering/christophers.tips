@@ -1,27 +1,20 @@
-# Moving from MySQL to PostgreSQL on Mac
+# Migrating from MySQL to Postgres on Ubuntu Server
 
-## Install Postgres with Brew
-
-First intall postgres
-
+## Install Postgres
 ```sh
-brew install postgresql
+sudo apt install postgresql postgresql-contrib
 ```
 
-Allow ps to auto start 
-
+Set ps to run on startup
 ```sh
-pg_ctl -D /usr/local/var/postgres start && brew services start postgresql
+sudo update-rc.d postgresql enable
 ```
 
+Next start a postgres session
+```sh
+sudo -u postgres psql
+```
 ## Create Userer and DB
-
-### Open ps session
-
-```sh
-# if you need to exit at any time, press ctl+d, or \q
-psql postgres
-```
 
 ### Create a user
 
@@ -95,7 +88,7 @@ python manage.py sqlflush --database=postgresql
 
 Export MySQL database to json.
 ```sh
-python manage.py dumpdata --all --natural --indent=4 > dbname.json
+python manage.py dumpdata --all --natural-primary --indent=4 > dbname.json
 ```
 
 Import json to Postgres
@@ -104,3 +97,23 @@ python manage.py loaddata dbname.json --database=postgresql
 ```
 
 Finally change the default database in settings.py to the postgress connection.
+
+## Tips
+
+### Restarting Postgres
+```sh
+sudo service postgresql restart
+```
+
+### Tuning
+
+Edit conf file. You can start a session with postgres and run `SHOW config_file;` to see its location.
+
+```sh
+sudo nano /etc/postgresql/10/main/postgresql.conf
+```
+
+Set shared_buffers to 25% of total ram. Example: with 4gb ram:
+```sh
+shared_buffers = 1024MB
+```
