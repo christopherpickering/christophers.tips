@@ -32,6 +32,9 @@
             "Mac Postgres":"postgres_db_mac",
             "Ubunto Postgres":"postgres_db_ubuntu"
         },
+        "Natural Health":{
+            "Hairputty":"hair_putty.md",
+        },
         "devider":""
     }
 }
