@@ -15,31 +15,31 @@ Organic is always best...
 * Essential Oils - 7-12 drops
 
 
-![Supplies](/static/img/hairputty-supplies.png)
+![Supplies](/static/img/hairputty-supplies.JPG)
 
 
 ## Instructions
 
 First setup a double boiler. I like to put a jar lid inside a pot of boiling water and then put a small measuring cup in there. Starting out with pre-boiling water from the kettle helps to speed things up.
 
-![Boiler](/static/img/hairputty-boiler.png)
+![Boiler](/static/img/hairputty-boiler.JPG)
 
 
 Add all ingredients in, except the essential oils. Save then for the end.
 
-![Cooking](/static/img/hairputty-cooking.png)
+![Cooking](/static/img/hairputty-cooking.JPG)
 
 
 Melt everything together. After its all melted and stirred together, add the essential oils. Give it one more quick stir and then pour out into containers.
 
-![Melted](/static/img/hairputty-melted.png)
+![Melted](/static/img/hairputty-melted.JPG)
 
 
 Try not to burn your hands.
 
 Quickly put the new putty into the freezer to cool off.
 
-![Freezer](/static/img/hairputty-freezer.png)
+![Freezer](/static/img/hairputty-freezer.JPG)
 
 
 ## Final Tips
