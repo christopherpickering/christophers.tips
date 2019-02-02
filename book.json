@@ -17,13 +17,14 @@
 
         "MISC":{
             "Make this Site":"make_this_site",
-            "Git":"git",
-            "Mac Setup":"setup_a_mac",
-            "Ubuntu Kiosk":"ubuntu_kiosk"
+            "Mac Setup":"setup_a_mac"
+            
         },
-        "Web Development":{
+        "Development":{
             "Django on Mac":"Mac_Django_Setup",
-            "Ubuntu Server":"ubuntu_server"
+            "Ubuntu Server":"ubuntu_server",
+            "Git":"git",
+            "Ubuntu Kiosk":"ubuntu_kiosk"
         },
         "Database Connections":{
             "Ubuntu CX Oracle":"cx_oracle_ubuntu",
@@ -34,6 +35,9 @@
         },
         "Natural Health":{
             "Hairputty":"hair_putty"
+        },
+        "Projects":{
+            "Slippers":"slippers"
         },
         "devider":""
     }
