@@ -875,3 +875,11 @@ a {
     font-size: var(--small-font);
 }
 
+.pic {
+    border: 1px solid var(--eighty-grey)
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+    border: 1px solid var(--eighty-grey) !important;
+    height: 300px;
+}
