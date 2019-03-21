@@ -32,7 +32,7 @@
             "Mac pyodbc":"pyodbc_mac",
             "Mac Postgres":"postgres_db_mac",
             "Ubunto Postgres":"postgres_db_ubuntu",
-            "Ubuntu pyodbc":"ubuntu_pyodbc"
+            "Ubuntu pyodbc":"pyodbc_ubuntu"
         },
         "Natural Health":{
             "Hairputty":"hair_putty"
