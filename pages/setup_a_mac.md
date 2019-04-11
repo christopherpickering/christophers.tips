@@ -23,6 +23,24 @@ sudo defaults write /Library/Preferences/com.apple.TimeMachine MaxSize 102400
 ```sh
 tree -v --charset utf-8 -I venv
 ```
+* python3
+```sh
+brew install python3
+```
+
+If you upgrade python the links in virtualenv's will break. They can be deleted and recreated.
+
+If you are in a directory with a virtual envirenment called venv this should work:
+
+```sh
+# find broken links
+find venv/ -type l
+# delete broken links
+find venv/ -type l -delete
+# create new links
+virtualenv venv
+```
+
 ## Terminal
 Nice color scheme - http://color.smyck.org
 
