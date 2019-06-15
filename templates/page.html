@@ -24,12 +24,18 @@
                                     <small>Last updated {{update_date}}</small>
                                 </span>
                                 <span class="footer-links">
-                                    <a href="https://github.com/christopherpickering"><i class="fab fa-github" style="padding-right: 20px;"></i></a>
-                                    <a href="https://code.christophers.tips"><i class="fab fa-code" style="padding-right: 20px;"></i></a>
-                                      <SCRIPT TYPE="text/javascript">
+                                    <a href="https://github.com/christopherpickering" style="padding-right:20px;"><i class="fab fa-github"></i></a>
+                                    <a href="https://code.christophers.tips" style="padding-right: 20px;"><i class="fas fa-code"></i></a>
+                                      <SCRIPT TYPE="text/javascript" id="emailsafety">
                                       emailE = 'gmail.com'
                                       emailE = ('pher122s' + '@' + emailE)
-                                      document.write('<a href="mailto:' + emailE + '"> <i class="fas fa-envelope" style="padding-right: 20px;"></i></a>')
+                                      document.write('<a href="mailto:' + emailE + '"> <i class="fas fa-envelope" style="padding-right: 20px;"></i></a>');
+                                        </script>
+                                        <script>
+                                        element = document.getElementById("emailsafety");
+                                        if(element){
+                                            element.parentNode.removeChild(element);
+                                        }
                                         </script>
                                         <NOSCRIPT>
                                           <a href="#"><i class="fas fa-envelope" style="padding-right: 20px;"></i></a>

@@ -9,6 +9,14 @@ import sys
 from html5print import HTMLBeautifier
 from csscompressor import compress
 import hashlib
+import re
+
+
+# from https://stackoverflow.com/questions/2319019/using-regex-to-remove-comments-from-source-files
+def removeComments(string):
+    string = re.sub(re.compile("/\*.*?\*/",re.DOTALL ) ,"" ,string) # remove all occurrences streamed comments (/*COMMENT */) from string
+    string = re.sub(re.compile("//.*?\n" ) ,"" ,string) # remove all occurrence single-line comments (//COMMENT\n ) from string
+    return string
 
 
 def build_page(page, path):
@@ -89,7 +97,7 @@ contents = ""
 for file in static_root.joinpath("js").iterdir():
     if file.suffix == ".js" and file.name != "jquery.js":
 
-        contents += compress(open(file, "r").read())
+        contents += compress(removeComments(open(file, "r").read()))
 
 
 new_name = hashlib.md5(contents.encode("utf-8")).hexdigest()[-5:]

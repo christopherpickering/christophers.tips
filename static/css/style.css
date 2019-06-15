@@ -29,8 +29,8 @@
     float: right;
     margin-top:-10px;
 }
-.footer-links a {
-    text-decoration: none;
+.footer-links a, .footer-links a:hover  {
+    text-decoration: none !important;
     color: var(--thirty-grey) !important;
 }
 
