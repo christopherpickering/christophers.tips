@@ -18,7 +18,7 @@
         });
 
         // place holder in case we ever want to do something with pages after they are loaded.
-        function callback(a){if(a == links.length){console.log(array)}};
+        function callback(a){if(a == links.length){}};
 
         $('#search').keyup(function(){
             
@@ -28,30 +28,32 @@
             };               
             
             var searchField = "(\\w+\\W+?|\\W+?\\w+?){0,5}"+$(this).val()+"(\\w+?\\W+?|\\W+?\\w+?){0,5}";
+            var searchValue = $(this).val();
 
             var regex = new RegExp(searchField, "gmi");
+            var regexTwo = new RegExp(searchValue,'i');
+
             var output = '<section class="normal markdown-section">';
             output += '<h1>Search Results</h1>';
             var count = 1;
-           
-            $.each(array, function(key, val){
-                 var search = val.data.match(regex);
-                 console.log(search);
-                if ((search)) {    
-                    output += '<a href="' + val.url + '">' + val.title + '</a>';   
-                    for (var i=0; i < search.length; i++) {
-                        output += '<p>' + search[i] + '</p>';                        
-                    }
 
-                    output += '</div>';
-                    output += '</div>';
-                    if(count%2 == 0){
-                      /* new row every 2 records */
-                      output += '</div><div class="row">'
+            $.each(array, function(key, val){
+                var search = val.data.match(regex);
+                if ((search)) {    
+                    output += '<h2><a href="' + val.url + '">' + val.title + '</a></h2><ul>';   
+                    for (var i=0; i < search.length; i++) {
+                        output += '<li>' + search[i].replace(regexTwo, '<strong>'+searchValue+'</strong>') + '</li>';
                     }
+                    output += '</ul>';
                     count++;
-                };
+                }
+               
             });
+             if (count == 1){
+
+                    output += '<h2>Nothing found.</h2>'
+                    
+                } ;
             output += '</section>';
             $('.page-inner').html(output);
         });
