@@ -58,7 +58,7 @@ The top and bottom will be sewn together first. Sew it strong! Everything is sew
 
 ## Test Fit
 
-They slippers should look something like this.. hopefully!
+The slippers should look something like this.. hopefully!
 
 <img src="/static/img/slippers/complete1.png" alt="complete" style="height: 300px;" class="pic">
 
