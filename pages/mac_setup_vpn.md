@@ -58,6 +58,7 @@ To find the local gateway run ```netstat -rn``` with the VPN off. The default de
 When completed your script may look like this:
 
 ```sh
+#!/bin/sh
 route -n add -net 10.0.0.0 10.1.123.1
 route -n add -net 10.1.233.1 10.1.123.1
 ```
@@ -70,10 +71,10 @@ chmod +x route_script
 
 #### Add plist To Run Script on Startup
 
-The plist needs to be in ``` ~/Library/LaunchAgents``` to be pickedup.
+The plist needs to be in ``` /Library/LaunchDaemons``` to be pickedup.
 
 ```sh
-nano ~/Library/LaunchAgents/com.route_script.plist
+nano /Library/LaunchDaemons/com.route_script.plist
 ```
 
 Add in the content.
@@ -85,15 +86,15 @@ Add in the content.
 <dict>
     <key>Label</key>
     <string>com.route_script.plist</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>fav_script_location/route_script</string>
-    </array>
+    <key>Program</key>
+    <string>fav_script_location/route_script</string>
     <key>StandardErrorPath</key>
     <string>fav_script_location/route_script.err</string>
     <key>StandardOutPath</key>
     <string>fav_script_location/route_script.out</string>
     <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
     <true/>
 </dict>
 </plist>
@@ -102,8 +103,8 @@ Add in the content.
 Set the script to launch on startup.
 
 ```sh
-sudo chown root ~/Library/LaunchAgents/com.route_script.plist
-sudo launchctl load ~/Library/LaunchAgents/com.route_script.plist
+sudo chown root /Library/LaunchDaemons/com.route_script.plist
+sudo launchctl load /Library/LaunchDaemons/com.route_script.plist
 ```
 
 To test if the route are working you can manually start the plist, or restart your mac and run ```netstat -rn```. Your new rout should be listed in there!
@@ -111,7 +112,7 @@ To test if the route are working you can manually start the plist, or restart yo
 To manually launch plist:
 
 ```sh
-sudo launchctl start com.route_script.plist
+sudo launchclt start com.route_script.plist
 ```
 
 If it does not start, open mac app "console" and check for any messages in the system.log section. You will find details of the errors in the paths specified for logging in the plist paths you created for logging.
