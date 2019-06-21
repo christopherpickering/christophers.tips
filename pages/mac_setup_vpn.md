@@ -68,7 +68,7 @@ Change permissions for script.
 chmod +x route_script
 ```
 
-### Add plist To Run Script on Startup
+#### Add plist To Run Script on Startup
 
 The plist needs to be in ``` ~/Library/LaunchAgents``` to be pickedup.
 
