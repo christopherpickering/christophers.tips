@@ -93,6 +93,8 @@ Add in the content.
     <string>fav_script_location/route_script.err</string>
     <key>StandardOutPath</key>
     <string>fav_script_location/route_script.out</string>
+    <key>RunAtLoad</key>
+    <true/>
 </dict>
 </plist>
 ```
