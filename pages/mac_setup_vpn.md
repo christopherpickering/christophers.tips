@@ -94,8 +94,8 @@ Add in the content.
     <string>fav_script_location/route_script.out</string>
     <key>RunAtLoad</key>
     <true/>
-    <key>KeepAlive</key>
-    <true/>
+    <key>StartInterval</key>
+    <integer>3600</integer>
 </dict>
 </plist>
 ```
