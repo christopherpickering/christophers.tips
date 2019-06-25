@@ -104,3 +104,10 @@ python manage.py loaddata dbname.json --database=postgresql
 ```
 
 Finally change the default database in settings.py to the postgress connection.
+
+## Postgres Config
+
+If you installed with homebrew, the config file will be here:
+```sh
+/usr/local/var/postgres
+```
