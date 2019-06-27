@@ -43,6 +43,14 @@ cd websites
 mkdir testsite
 ```
 
+### Python Settings
+
+Stop python from creating .pyc files to keep space free.
+```sh
+export PYTHONDONTWRITEBYTECODE=1
+```
+
+
 ### Pull Your Code From GIT Repository
 
 Update Git settings and initialize a git repository for your project.

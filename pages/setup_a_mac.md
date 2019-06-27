@@ -167,3 +167,21 @@ cd to/path/of/site
 python3 -m  http.server 8001 # or any port #
 ```
 Navigate to 0.0.0.0:8001
+
+## Terminal Upgrade
+
+Install [iterm2](https://www.iterm2.com)
+
+Install Oh My [Zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+Edit Alias for Oh My Zsh
+
+```sh
+nano ~/.zshrc
+
+# reload settings
+source ~/.zshrc
+```
+
+
+
