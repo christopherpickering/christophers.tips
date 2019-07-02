@@ -27,7 +27,7 @@ Thankfully your mac has an option to router network traffic to specific hosts an
 A network route can be easily added. Heres an example that will reroute all 10.x.x.x traffic through 11.0.0.1:
 
 ```sh
-sudo -n add route -net 10.0.0.0 11.0.0.1
+sudo route -n add -net 10.0.0.0 11.0.0.1
 ```
 
 The problem is that when your mac restarts it will reset the routes!
