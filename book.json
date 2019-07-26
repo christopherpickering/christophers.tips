@@ -40,6 +40,10 @@
         "Projects":{
             "Slippers":"slippers"
         },
+        "Code Server":{
+            "Gitea Setup":"gitea_setup",
+            "Gitea Customization":"gitea_customization"
+        },
         "devider":""
     }
 }
