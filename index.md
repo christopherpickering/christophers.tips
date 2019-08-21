@@ -1,10 +1,10 @@
 # Hi, I'm Christopher Pickering
 
-I'm a believer in Jesus Christ and an engineer. I love my family, learning, building things, and solving hard problems.
+I'm an engineer. I love my family, learning, building things, and solving hard problems.
 
 ## What I do
 
-I work for [Bimba](www.bimba.com) during the day. Most of my time is spent creating solutions and simplifying tasks with python programming and doing data collection, reporting and analysis.  
+I work as a data engineer during the day. Most of my time is spent creating solutions and simplifying tasks with programming and doing data collection, reporting and analysis.  
 
 When other time is available I chip in at [Dayspring Bibles](www.dayspringbibles.com) doing scripting, typesetting and other fun things.
 
