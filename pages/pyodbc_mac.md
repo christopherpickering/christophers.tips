@@ -12,7 +12,7 @@ If homebrew is not installed, get that first.
 
 ```sh
 brew install unixodbc
-brew install freetds --with-unixodbc
+brew install freetds
 ```
 
 
