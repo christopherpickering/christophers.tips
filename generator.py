@@ -87,6 +87,7 @@ for file in static_root.joinpath("css").iterdir():
 
 
 new_name = hashlib.md5(contents.encode("utf-8")).hexdigest()[-5:]
+print(new_name)
 css_file = file.parents[0].joinpath("CACHE").joinpath(new_name).with_suffix(".css")
 with css_file.open("w+", encoding="utf-8") as wf:
     wf.write(contents)
@@ -94,6 +95,7 @@ with css_file.open("w+", encoding="utf-8") as wf:
 
 font_contents = compress(open(static_root.joinpath("css").joinpath('all.css'), "r").read())
 font_name = hashlib.md5(font_contents.encode("utf-8")).hexdigest()[-5:]
+print(font_name)
 font_file = file.parents[0].joinpath("CACHE").joinpath(new_name).with_suffix(".css")
 
 with font_file.open("w+", encoding="utf-8") as wf:
