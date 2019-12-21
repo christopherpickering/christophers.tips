@@ -127,6 +127,9 @@ css = [
     website_root.joinpath("static", "css", "CACHE", css_file.name)
     .with_suffix(".css")
     .relative_to(website_root)
+    ,website_root.joinpath("static", "css", "CACHE", font_file.name)
+    .with_suffix(".css")
+    .relative_to(website_root)
 ]
 
 # make pages dir
