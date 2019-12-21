@@ -14,8 +14,12 @@ import re
 
 # from https://stackoverflow.com/questions/2319019/using-regex-to-remove-comments-from-source-files
 def removeComments(string):
-    string = re.sub(re.compile("/\*.*?\*/",re.DOTALL ) ,"" ,string) # remove all occurrences streamed comments (/*COMMENT */) from string
-    string = re.sub(re.compile("//.*?\n" ) ,"" ,string) # remove all occurrence single-line comments (//COMMENT\n ) from string
+    string = re.sub(
+        re.compile("/\*.*?\*/", re.DOTALL), "", string
+    )  # remove all occurrences streamed comments (/*COMMENT */) from string
+    string = re.sub(
+        re.compile("//.*?\n"), "", string
+    )  # remove all occurrence single-line comments (//COMMENT\n ) from string
     return string
 
 
@@ -29,7 +33,9 @@ def build_page(page, path):
     )
 
     with open(page, encoding="utf-8") as f:
-        contents = markdown2.markdown(f.read(), extras=["fenced-code-blocks","cuddled-lists"])
+        contents = markdown2.markdown(
+            f.read(), extras=["fenced-code-blocks", "cuddled-lists"]
+        )
 
     my_page = PurePosixPath(Path(page)).stem
     myfname = path.joinpath(my_page).with_suffix(".html")
@@ -92,7 +98,9 @@ with css_file.open("w+", encoding="utf-8") as wf:
     wf.write(contents)
 
 
-font_contents = compress(open(static_root.joinpath("css").joinpath('all.css'), "r").read())
+font_contents = compress(
+    open(static_root.joinpath("css").joinpath("all.css"), "r").read()
+)
 font_name = hashlib.md5(font_contents.encode("utf-8")).hexdigest()[-5:]
 font_file = file.parents[0].joinpath("CACHE").joinpath(font_name).with_suffix(".css")
 
@@ -126,12 +134,11 @@ js = [
 css = [
     website_root.joinpath("static", "css", "CACHE", css_file.name)
     .with_suffix(".css")
-    .relative_to(website_root)
-    ,website_root.joinpath("static", "css", "CACHE", font_file.name)
+    .relative_to(website_root),
+    website_root.joinpath("static", "css", "CACHE", font_file.name)
     .with_suffix(".css")
-    .relative_to(website_root)
+    .relative_to(website_root),
 ]
-print(css)
 
 # make pages dir
 website_root.joinpath("pages").mkdir(exist_ok=True, parents=True)
