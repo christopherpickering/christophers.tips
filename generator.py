@@ -97,17 +97,6 @@ css_file = file.parents[0].joinpath("CACHE").joinpath(new_name).with_suffix(".cs
 with css_file.open("w+", encoding="utf-8") as wf:
     wf.write(contents)
 
-
-font_contents = compress(
-    open(static_root.joinpath("css").joinpath("all.css"), "r").read()
-)
-font_name = hashlib.md5(font_contents.encode("utf-8")).hexdigest()[-5:]
-font_file = file.parents[0].joinpath("CACHE").joinpath(font_name).with_suffix(".css")
-
-with font_file.open("w+", encoding="utf-8") as wf:
-    wf.write(font_contents)
-
-
 # build compressed JS files
 contents = ""
 
@@ -133,9 +122,6 @@ js = [
 ]
 css = [
     website_root.joinpath("static", "css", "CACHE", css_file.name)
-    .with_suffix(".css")
-    .relative_to(website_root),
-    website_root.joinpath("static", "css", "CACHE", font_file.name)
     .with_suffix(".css")
     .relative_to(website_root),
 ]
