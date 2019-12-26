@@ -101,6 +101,9 @@ If you are typing the same phrase in terminal over and over and over it may be h
 # edit bash profile
 nano ~/.bash_profile
 
+# for catelena and newer
+nano ~/.zprofile
+
 # add in the alias
 
 # Aliases - remember no spaces at equals sign
