@@ -47,7 +47,8 @@
             "VPN on Mac":"mac_setup_vpn"
         },
         "Windows":{
-            "Cmder on Windows":"cmder_on_windows"
+            "Setup Cmder":"cmder_on_windows",
+            "Use an Apple Keyboard": "mac_keyboard_on_windows"
         },
         "devider":""
     }
