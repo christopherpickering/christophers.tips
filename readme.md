@@ -90,8 +90,9 @@ www.mysite.com
 Finally, build and push the site.
 
 ```sh
-# to just build for testing
 ./build.bash
+
+bash build.bash
 ```
 
 Nice! You will be able to see you site now at mysite.com!
