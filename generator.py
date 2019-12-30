@@ -50,8 +50,8 @@ def build_page(page, path):
     )
 
     # prettify
-    contents = HTMLBeautifier.beautify(contents, 4)
-    #print(contents)
+    #contents = HTMLBeautifier.beautify(contents, 4)
+    print(contents.encode("utf-8"))
     with myfname.open("w+", encoding="utf-8", newline='\n') as wf:
         wf.write(contents)
 
