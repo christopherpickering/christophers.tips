@@ -74,7 +74,7 @@ local lambda = "➜"
 This is the function that displays the git status.
 ```lua
 
-local function git_prompt_filter()
+local function git\_prompt\_filter()
 
   -- Colors for git status
   local colors = {
