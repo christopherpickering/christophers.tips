@@ -32,7 +32,7 @@ def build_page(page, path):
         .replace(" 0", " ")
     )
 
-    with open(page, encoding="utf-8") as f:
+    with open(page, encoding="utf-8", newline='\n') as f:
         contents = markdown2.markdown(
             f.read(), extras=["fenced-code-blocks", "cuddled-lists"]
         )
