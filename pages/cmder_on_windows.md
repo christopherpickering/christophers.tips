@@ -76,49 +76,49 @@ This is the function that displays the git status.
 
 local function git_prompt_filter()
 
-    -- Colors for git status
-    local colors = {
-        clean = "\x1b[32;3m",
-        dirty = "\x1b[33;3m",
-        conflict = "\x1b[31;1m"
-    }
+  -- Colors for git status
+  local colors = {
+    clean = "\x1b[32;3m",
+    dirty = "\x1b[33;3m",
+    conflict = "\x1b[31;1m"
+  }
 
-    local icons = {
-        clean = " ✔",
-        dirty = " ✎",
-        conflict = " ✘"
-    }
+  local icons = {
+    clean = " ✔",
+    dirty = " ✎",
+    conflict = " ✘"
+  }
 
-    local git_dir = get_git_dir()
-    if git_dir then
-        -- if we're inside of git repo then try to detect current branch
-        local branch = get_git_branch(git_dir)
-        local color
-        local icon
-        if branch then
-            -- Has branch => therefore it is a git folder, now figure out status
-            local gitStatus = get_git_status()
-            local gitConflict = get_git_conflict()
+  local git_dir = get_git_dir()
+  if git_dir then
+    -- if we're inside of git repo then try to detect current branch
+    local branch = get_git_branch(git_dir)
+    local color
+    local icon
+    if branch then
+      -- Has branch => therefore it is a git folder, now figure out status
+      local gitStatus = get_git_status()
+      local gitConflict = get_git_conflict()
 
-            color = colors.dirty
-            icon = icons.dirty
-            if gitStatus then
-                color = colors.clean
-                icon = icons.clean
-            end
+      color = colors.dirty
+      icon = icons.dirty
+      if gitStatus then
+        color = colors.clean
+        icon = icons.clean
+      end
 
-            if gitConflict then
-                color = colors.conflict
-                icon = icons.conflict
-            end 
+      if gitConflict then
+        color = colors.conflict
+        icon = icons.conflict
+      end 
 
-            clink.prompt.value = string.gsub(clink.prompt.value, "{git}", "\x1b[0m(\x1b[1m"..color..verbatim(branch).."\x1b[0m)\x1b[1m".. icon)
-            return false
-        end
+      clink.prompt.value = string.gsub(clink.prompt.value, "{git}", "\x1b[0m(\x1b[1m"..color..verbatim(branch).."\x1b[0m)\x1b[1m".. icon)
+      return false
     end
+  end
 
-    -- No git present or not in git file
-    clink.prompt.value = string.gsub(clink.prompt.value, "{git}", "")
-    return false
+  -- No git present or not in git file
+  clink.prompt.value = string.gsub(clink.prompt.value, "{git}", "")
+  return false
 end
 ```
