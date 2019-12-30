@@ -2,7 +2,7 @@
 
 Nothing quite compares to Iterm2 + Oh My Zsh, but on a Windows 10 this is the best I am able to find. Here's a screenshot:
 
-<img src="/static/img/cmder.png" alt="Supplies" style="height: 300px;">
+<img src="/static/img/cmder.png" alt="Supplies" style="max-height: 100%;">
 
 
 First download [Cmder](http://https://cmder.net/). Unzip into "Documents" and run cmder.exe. Answer any questions when prompted.
