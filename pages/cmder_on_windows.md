@@ -70,11 +70,11 @@ local cmder_prompt = "\x1b[1;32;40m\x1b[0;35m{cwd} {git}{hg}{svn} \n\x1b[1;32;40
 local lambda = "➜"
 ```
 
-**Update git_prompt_filter() function**
+**Update git\_prompt\_filter() function**
 This is the function that displays the git status.
 ```lua
 
-local function git\_prompt\_filter()
+local function git_prompt_filter()
 
   -- Colors for git status
   local colors = {
