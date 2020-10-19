@@ -46,7 +46,7 @@
             "Gitea Customization":"gitea_customization"
         },
         "Mac":{
-            "Mac Setup":"setup_a_mac",
+            "Mac Setup":"setup_a_mac"
         },
         "Windows":{
             "Setup Cmder":"cmder_on_windows",
