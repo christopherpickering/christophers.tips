@@ -14,19 +14,16 @@
         "desc_git":"A collection of several git and github techniques"
     },
     "navigation":{
-
-        "MISC":{
-            "Make this Site":"make_this_site",
-            "Mac Setup":"setup_a_mac"
-        },
         "Network":{
             "VPN on Mac":"mac_setup_vpn",
             "iPhone LTE DNS Change": "iphone_dns"
         },
-        "Development":{
+        "About":{
+            "Make this Site":"make_this_site"
+        },
+        "Web Development":{
             "Django on Mac":"Mac_Django_Setup",
             "Ubuntu Server":"ubuntu_server",
-            "Git":"git",
             "Ubuntu Kiosk":"ubuntu_kiosk"
         },
         "Database Connections":{
@@ -43,9 +40,17 @@
         "Projects":{
             "Slippers":"slippers"
         },
-        "Code Server":{
+        "Code Management":{
+            "Git":"git",
             "Gitea Setup":"gitea_setup",
             "Gitea Customization":"gitea_customization"
+        },
+        "Mac":{
+            "Mac Setup":"setup_a_mac",
+        },
+        "Windows":{
+            "Setup Cmder":"cmder_on_windows",
+            "Use an Apple Keyboard": "mac_keyboard_on_windows"
         },
         "devider":""
     }

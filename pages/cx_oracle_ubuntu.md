@@ -4,7 +4,7 @@
 
 ## Download Instant Client
 
-On host computer (Mac in this case) [donwload](https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.htm) the instant client basic and skd rpn's. Oracle changed the name on sdk's to devel.
+On host computer (Mac in this case) [download](https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.htm) the instant client basic and skd rpn's. Oracle changed the name on sdk's to devel.
 
 oracle-instantclient18.3-basic-18.3.0.0.0-1.x86_64.rpm
 oracle-instantclient18.3-devel-18.3.0.0.0-1.x86_64.rpm 

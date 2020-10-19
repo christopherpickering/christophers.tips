@@ -32,7 +32,7 @@ def build_page(page, path):
         .replace(" 0", " ")
     )
 
-    with open(page, encoding="utf-8") as f:
+    with open(page, encoding="utf-8", newline='\n') as f:
         contents = markdown2.markdown(
             f.read(), extras=["fenced-code-blocks", "cuddled-lists"]
         )
@@ -50,9 +50,10 @@ def build_page(page, path):
     )
 
     # prettify
-    contents = HTMLBeautifier.beautify(contents, 4)
+    # disabled for now.. is messing up code blocks for markdown.
+    #contents = HTMLBeautifier.beautify(contents, 4)
 
-    with myfname.open("w+", encoding="utf-8") as wf:
+    with myfname.open("w+", encoding="utf-8", newline='\n') as wf:
         wf.write(contents)
 
 

@@ -64,9 +64,6 @@ When you are ready to publish your content, be sure the virtual environment is a
 
 ```sh
 ./build.bash
-
-# or on windows cmder
-bash build.bash
 ```
 
 ## Register a Domain With Google
@@ -94,6 +91,8 @@ Finally, build and push the site.
 
 ```sh
 ./build.bash
+
+bash build.bash
 ```
 
 Nice! You will be able to see you site now at mysite.com!
