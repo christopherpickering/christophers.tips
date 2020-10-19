@@ -8,4 +8,4 @@ git push origin master
 cd website
 git add .
 git commit -m 'updated commit'
-git push origin master
+git push --force origin master
