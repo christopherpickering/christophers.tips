@@ -17,8 +17,11 @@
 
         "MISC":{
             "Make this Site":"make_this_site",
-            "Mac Setup":"setup_a_mac",
-            "VPN on Mac":"mac_setup_vpn"
+            "Mac Setup":"setup_a_mac"
+        },
+        "Network":{
+            "VPN on Mac":"mac_setup_vpn",
+            "iPhone LTE DNS Change": "iphone_dns"
         },
         "Development":{
             "Django on Mac":"Mac_Django_Setup",
