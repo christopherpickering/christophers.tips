@@ -1,4 +1,4 @@
-#How To Make This Site
+# How To Make This Site
 
 This site can be made in a few simple steps -
 * Setup the project
